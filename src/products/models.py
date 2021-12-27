@@ -17,8 +17,8 @@ class Manufacturer(models.Model):
 
     logo = models.ImageField(
         upload_to=get_manufacturer_logo_path,
-        verbose_name=_('Logo'),
         help_text=_('Recommend: 300 x 160 px.'),
+        verbose_name=_('Logo'),
     )
 
     def __str__(self):
