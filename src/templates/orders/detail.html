@@ -39,11 +39,13 @@
       <h3 class="product-title font-size-base mb-2">
         <a href="{% url 'products:product_detail' item.product.id %}">
           {% if LANGUAGE_CODE == 'en' %}
-            {{ item.product.name }}
-          {% elif LANGUAGE_CODE == 'ru' %}
-            {{ item.product.name_ru }}
-          {% elif LANGUAGE_CODE == 'be' %}
-            {{ item.product.name_be }}
+          {{ item.product.name }}
+          {% else %}
+          {% for product_translation in item.product.producttranslation_set.all %}
+          {% if product_translation.language == LANGUAGE_CODE %}
+          {{ product_translation.name }}
+          {% endif %}
+          {% endfor %}
           {% endif %}
         </a>
       </h3>
