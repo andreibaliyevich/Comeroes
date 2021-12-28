@@ -37,13 +37,13 @@ class StoreAdmin(admin.OSMGeoAdmin):
             'fields': (
                 ('customers_phone', 'support_phone'),
                 ('customers_email', 'support_email'),
-            )
+            ),
         }),
         (_('Working hours'), {
             'fields': (
                 ('time_weekdays_start', 'time_weekdays_end'),
                 ('time_weekend_start', 'time_weekend_end'),
-            )
+            ),
         }),
     )
     inlines = (StoreTranslationInline, StoreImageInline, WarehouseInline)

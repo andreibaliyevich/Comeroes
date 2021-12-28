@@ -92,7 +92,7 @@ class ComicBookProductAdmin(admin.ModelAdmin):
                 'main_image',
                 ('price', 'old_price'),
                 'rating',
-            )
+            ),
         }),
         (_('Description / Specifications'), {
             'fields': (
@@ -103,7 +103,7 @@ class ComicBookProductAdmin(admin.ModelAdmin):
                 'published',
                 'binding',
                 'language',
-            )
+            ),
         }),
     )
     readonly_fields = ('rating',)
@@ -136,7 +136,7 @@ class ToyProductAdmin(admin.ModelAdmin):
                 'main_image',
                 ('price', 'old_price'),
                 'rating',
-            )
+            ),
         }),
         (_('Description / Specifications'), {
             'fields': (
@@ -146,7 +146,7 @@ class ToyProductAdmin(admin.ModelAdmin):
                 'material',
                 'packing_size',
                 'weight',
-            )
+            ),
         }),
     )
     readonly_fields = ('rating',)
@@ -179,7 +179,7 @@ class ClothesProductAdmin(admin.ModelAdmin):
                 'main_image',
                 ('price', 'old_price'),
                 'rating',
-            )
+            ),
         }),
         (_('Description / Specifications'), {
             'fields': (
@@ -187,7 +187,7 @@ class ClothesProductAdmin(admin.ModelAdmin):
                 'category',
                 'size',
                 'color',
-            )
+            ),
         }),
     )
     readonly_fields = ('rating',)
@@ -220,13 +220,13 @@ class AccessoryProductAdmin(admin.ModelAdmin):
                 'main_image',
                 ('price', 'old_price'),
                 'rating',
-            )
+            ),
         }),
         (_('Description / Specifications'), {
             'fields': (
                 'description',
                 'category',
-            )
+            ),
         }),
     )
     readonly_fields = ('rating',)
@@ -259,13 +259,13 @@ class HomeDecorProductAdmin(admin.ModelAdmin):
                 'main_image',
                 ('price', 'old_price'),
                 'rating',
-            )
+            ),
         }),
         (_('Description / Specifications'), {
             'fields': (
                 'description',
                 'category',
-            )
+            ),
         }),
     )
     readonly_fields = ('rating',)
