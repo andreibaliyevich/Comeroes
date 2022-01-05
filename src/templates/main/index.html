@@ -258,5 +258,7 @@
 
 
 {% block javascript %}
+<script src="{% static 'js/Drift.min.js' %}"></script>
+{% include 'cart/script_base.html' %}
 {% include 'wishlist/script_wish_add.html' %}
 {% endblock javascript %}
