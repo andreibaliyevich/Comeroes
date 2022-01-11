@@ -5,7 +5,7 @@ from . import views
 app_name = 'support'
 
 urlpatterns = [
-    path('', views.support, name='support'),
+    path('', views.SupportView.as_view(), name='support'),
     path('tickets/', views.tickets, name='tickets'),
     path('tickets/<int:t_id>/detail/',
         views.ticket_detail,
