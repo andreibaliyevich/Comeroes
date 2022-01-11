@@ -34,7 +34,7 @@
                 <div class="form-group mb-0{% if request.method == 'POST' %}{% if signup_form.password2.errors %} is-invalid{% else %} is-valid{% endif %}{% endif %}">
                   <label for="id_password1"><span class="text-danger">*</span>{{ signup_form.password1.label }}</label>
                   <div class="password-toggle{% if request.method == 'POST' %}{% if signup_form.password2.errors %} is-invalid{% else %} is-valid{% endif %}{% endif %}">
-                    <input class="form-control{% if request.method == 'POST' %}{% if signup_form.password2.errors %} is-invalid{% else %} is-valid{% endif %}{% endif %}" id="id_password1" name="password1" type="password" required{% if signup_form.password1.value %} value="{{ signup_form.password1.value }}"{% endif %}>
+                    <input class="form-control{% if request.method == 'POST' %}{% if signup_form.password2.errors %} is-invalid{% else %} is-valid{% endif %}{% endif %}" id="id_password1" name="password1" type="password" required{% if signup_form.password1.data %} value="{{ signup_form.password1.data }}"{% endif %}>
                     <label class="password-toggle-btn"{% if request.method == 'POST' %} style="right: 2.1rem;"{% endif %}>
                       <input class="custom-control-input" type="checkbox">
                       <i class="czi-eye password-toggle-indicator"></i>
@@ -47,7 +47,7 @@
                 <div class="form-group mb-0{% if request.method == 'POST' %}{% if signup_form.password2.errors %} is-invalid{% else %} is-valid{% endif %}{% endif %}">
                   <label for="id_password2"><span class="text-danger">*</span>{{ signup_form.password2.label }}</label>
                   <div class="password-toggle{% if request.method == 'POST' %}{% if signup_form.password2.errors %} is-invalid{% else %} is-valid{% endif %}{% endif %}">
-                    <input class="form-control{% if request.method == 'POST' %}{% if signup_form.password2.errors %} is-invalid{% else %} is-valid{% endif %}{% endif %}" id="id_password2" name="password2" type="password" required{% if signup_form.password2.value %} value="{{ signup_form.password2.value }}"{% endif %}>
+                    <input class="form-control{% if request.method == 'POST' %}{% if signup_form.password2.errors %} is-invalid{% else %} is-valid{% endif %}{% endif %}" id="id_password2" name="password2" type="password" required{% if signup_form.password2.data %} value="{{ signup_form.password2.data }}"{% endif %}>
                     <label class="password-toggle-btn"{% if request.method == 'POST' %} style="right: 2.1rem;"{% endif %}>
                       <input class="custom-control-input" type="checkbox">
                       <i class="czi-eye password-toggle-indicator"></i>
