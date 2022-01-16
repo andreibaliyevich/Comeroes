@@ -3,7 +3,6 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
 from django.db import IntegrityError
-from django.db.models import Q
 from django.http import Http404, HttpResponse, JsonResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from django.utils.translation import gettext_lazy as _
@@ -35,66 +34,53 @@ from .utilities import get_stats_of_reviews
 
 def search(request):
     """ Search for products """
-    sorting_form = SortingForm()
-    products = []
     query = request.GET.get('q', '')
+    category = request.GET.get('category', '')
+    sorting_form = SortingForm()
 
-    if query:
-        queries = (
-            Q(name__icontains=query)
-            | Q(name_ru__icontains=query)
-            | Q(name_be__icontains=query)
-        )
+    if category == 'comics':
+        products = ComicBookProduct.objects.search(query)
+    elif category == 'toys':
+        products = ToyProduct.objects.search(query)
+    elif category == 'clothes':
+        products = ClothesProduct.objects.search(query)
+    elif category == 'accessories':
+        products = AccessoryProduct.objects.search(query)
+    elif category == 'home_decor':
+        products = HomeDecorProduct.objects.search(query)
+    else:
+        products = Product.objects.search(query)
 
-        category = request.GET.get('category', '')
+    if 'products_sort' in request.session:
+        type_sort = request.session.get('products_sort')
+        sorting_form.fields['type_sort'].initial = type_sort
 
-        if category == 'comics':
-            products += ComicBookProduct.objects.filter(queries)
-        elif category == 'toys':
-            products += ToyProduct.objects.filter(queries)
-        elif category == 'clothes':
-            products += ClothesProduct.objects.filter(queries)
-        elif category == 'accessories':
-            products += AccessoryProduct.objects.filter(queries)
-        elif category == 'home_decor':
-            products += HomeDecorProduct.objects.filter(queries)
-        else:
-            products += ComicBookProduct.objects.filter(queries)
-            products += ToyProduct.objects.filter(queries)
-            products += ClothesProduct.objects.filter(queries)
-            products += AccessoryProduct.objects.filter(queries)
-            products += HomeDecorProduct.objects.filter(queries)
-
-        if 'products_sort' in request.session:
-            type_sort = request.session.get('products_sort')
-            sorting_form.fields['type_sort'].initial = type_sort
-
-            if type_sort == 'popularity':
-                products.sort(key=attrgetter('rating', 'id'), reverse=True)
-            elif type_sort == 'new_old':
-                products.sort(key=attrgetter('created_at', 'id'), reverse=True)
-            elif type_sort == 'old_new':
-                products.sort(key=attrgetter('created_at', 'id'))
-            elif type_sort == 'low_high_price':
-                products.sort(key=attrgetter('price', 'id'))
-            elif type_sort == 'high_low_price':
-                products.sort(key=attrgetter('price', 'id'), reverse=True)
-            elif type_sort == 'az_order':
-                if request.LANGUAGE_CODE == 'en':
-                    products.sort(key=attrgetter('name', 'id'))
-                elif request.LANGUAGE_CODE == 'ru':
-                    products.sort(key=attrgetter('name_ru', 'id'))
-                elif request.LANGUAGE_CODE == 'be':
-                    products.sort(key=attrgetter('name_be', 'id'))
-            elif type_sort == 'za_order':
-                if request.LANGUAGE_CODE == 'en':
-                    products.sort(key=attrgetter('name', 'id'), reverse=True)
-                elif request.LANGUAGE_CODE == 'ru':
-                    products.sort(key=attrgetter('name_ru', 'id'), reverse=True)
-                elif request.LANGUAGE_CODE == 'be':
-                    products.sort(key=attrgetter('name_be', 'id'), reverse=True)
-        else:
-            products.sort(key=attrgetter('rating', 'id'), reverse=True)
+        if type_sort == 'popularity':
+            products = products.order_by('-rating', 'id')
+        elif type_sort == 'new_old':
+            products = products.order_by('-published', 'id')
+        elif type_sort == 'old_new':
+            products = products.order_by('published', 'id')
+        elif type_sort == 'low_high_price':
+            products = products.order_by('price', 'id')
+        elif type_sort == 'high_low_price':
+            products = products.order_by('-price', 'id')
+        elif type_sort == 'az_order':
+            if request.LANGUAGE_CODE == 'en':
+                products = products.order_by('name', 'id')
+            elif request.LANGUAGE_CODE == 'ru':
+                products = products.order_by('name_ru', 'id')
+            elif request.LANGUAGE_CODE == 'be':
+                products = products.order_by('name_be', 'id')
+        elif type_sort == 'za_order':
+            if request.LANGUAGE_CODE == 'en':
+                products = products.order_by('-name', 'id')
+            elif request.LANGUAGE_CODE == 'ru':
+                products = products.order_by('-name_ru', 'id')
+            elif request.LANGUAGE_CODE == 'be':
+                products = products.order_by('-name_be', 'id')
+    else:
+        products = products.order_by('-rating', 'id')
 
     paginator = Paginator(products, 20)
     page_number = request.GET.get('page', 1)

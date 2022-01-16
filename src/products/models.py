@@ -7,6 +7,7 @@ from django.dispatch import receiver
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 from contacts.models import Store
+from .managers import ProductManager
 from .utilities import get_manufacturer_logo_path, get_product_image_path
 
 
@@ -80,6 +81,8 @@ class Product(models.Model):
         auto_now=True,
         verbose_name=_('Updated at'),
     )
+
+    objects = ProductManager()
 
     def __str__(self):
         return f'{ self.id } | { self.name }'
