@@ -4,6 +4,7 @@ from django.contrib.gis.geos import Point
 from django.core.validators import RegexValidator
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
+from main.model_fields import TranslatedField
 from .utilities import get_store_image_path
 
 
@@ -16,6 +17,7 @@ class Store(models.Model):
     )
 
     address = models.CharField(max_length=255, verbose_name=_('Address'))
+    translated_address = TranslatedField('address')
     location = models.PointField(
         default=Point(0.0, 0.0),
         verbose_name=_('Location'),
@@ -74,6 +76,7 @@ class StoreTranslation(models.Model):
     store = models.ForeignKey(
         Store,
         on_delete=models.CASCADE,
+        related_name='translations',
         verbose_name=_('Store'),
     )
     language = models.CharField(

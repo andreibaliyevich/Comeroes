@@ -36,7 +36,7 @@ def cart_add(request):
         if request.LANGUAGE_CODE == 'en':
             product_name = product.name
         else:
-            for product_translation in product.producttranslation_set.all():
+            for product_translation in product.translations.all():
                 if product_translation.language == request.LANGUAGE_CODE:
                     product_name = product_translation.name
                     break

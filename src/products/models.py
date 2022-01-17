@@ -6,6 +6,7 @@ from django.db.models.signals import post_save, post_delete
 from django.dispatch import receiver
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
+from main.model_fields import TranslatedField
 from contacts.models import Store
 from .managers import ProductManager
 from .utilities import get_manufacturer_logo_path, get_product_image_path
@@ -43,6 +44,7 @@ class Product(models.Model):
     )
 
     name = models.CharField(max_length=255, verbose_name=_('Name'))
+    translated_name = TranslatedField('name')
     slug = models.SlugField(max_length=255, unique=True, verbose_name=_('Slug'))
 
     main_image = models.ImageField(
@@ -72,6 +74,7 @@ class Product(models.Model):
     )
 
     description = models.TextField(blank=True, verbose_name=_('Description'))
+    translated_description = TranslatedField('description')
 
     created_at = models.DateTimeField(
         auto_now_add=True,
@@ -341,6 +344,7 @@ class ProductTranslation(models.Model):
     product = models.ForeignKey(
         Product,
         on_delete=models.CASCADE,
+        related_name='translations',
         verbose_name=_('Product'),
     )
     language = models.CharField(

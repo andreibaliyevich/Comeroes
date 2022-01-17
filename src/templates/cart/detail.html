@@ -60,15 +60,7 @@
               <div class="media-body pt-2">
                 <h3 class="product-title font-size-base mb-2">
                   <a href="{% url 'products:product_detail' item.product.id %}">
-                    {% if LANGUAGE_CODE == 'en' %}
-                    {{ item.product.name }}
-                    {% else %}
-                    {% for product_translation in item.product.producttranslation_set.all %}
-                    {% if product_translation.language == LANGUAGE_CODE %}
-                    {{ product_translation.name }}
-                    {% endif %}
-                    {% endfor %}
-                    {% endif %}
+                    {{ item.product.translated_name }}
                   </a>
                 </h3>
                 <div class="font-size-lg">

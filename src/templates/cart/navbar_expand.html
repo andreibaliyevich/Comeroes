@@ -32,15 +32,7 @@
             <div class="media-body">
               <h6 class="widget-product-title">
                 <a href="{% url 'products:product_detail' item.product.id %}">
-                  {% if LANGUAGE_CODE == 'en' %}
-                  {{ item.product.name }}
-                  {% else %}
-                  {% for product_translation in item.product.producttranslation_set.all %}
-                  {% if product_translation.language == LANGUAGE_CODE %}
-                  {{ product_translation.name }}
-                  {% endif %}
-                  {% endfor %}
-                  {% endif %}
+                  {{ item.product.translated_name }}
                 </a>
               </h6>
               <div class="widget-product-meta">

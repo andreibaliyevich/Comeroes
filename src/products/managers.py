@@ -15,7 +15,7 @@ class ProductManager(models.Manager):
                 if query in obj.name.lower():
                     id_list.append(obj.id)
                 else:
-                    for obj_trans in obj.producttranslation_set.all():
+                    for obj_trans in obj.translations.all():
                         if query in obj_trans.name.lower():
                             id_list.append(obj.id)
                             break

@@ -20,15 +20,7 @@
       </a>
       <h3 class="product-title font-size-sm">
         <a href="{{ product.get_absolute_url }}">
-          {% if LANGUAGE_CODE == 'en' %}
-          {{ product.name }}
-          {% else %}
-          {% for product_translation in product.producttranslation_set.all %}
-          {% if product_translation.language == LANGUAGE_CODE %}
-          {{ product_translation.name }}
-          {% endif %}
-          {% endfor %}
-          {% endif %}
+          {{ product.translated_name }}
         </a>
       </h3>
       <div class="d-flex justify-content-between">
