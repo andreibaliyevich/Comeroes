@@ -29,7 +29,7 @@ from .models import (
     Warehouse,
     Review,
 )
-from .utilities import get_stats_of_reviews
+from .services import sort_products_by_name, get_stats_of_reviews
 
 
 def search(request):
@@ -58,27 +58,17 @@ def search(request):
         if type_sort == 'popularity':
             products = products.order_by('-rating', 'id')
         elif type_sort == 'new_old':
-            products = products.order_by('-published', 'id')
+            products = products.order_by('-created_at', 'id')
         elif type_sort == 'old_new':
-            products = products.order_by('published', 'id')
+            products = products.order_by('created_at', 'id')
         elif type_sort == 'low_high_price':
             products = products.order_by('price', 'id')
         elif type_sort == 'high_low_price':
             products = products.order_by('-price', 'id')
         elif type_sort == 'az_order':
-            if request.LANGUAGE_CODE == 'en':
-                products = products.order_by('name', 'id')
-            elif request.LANGUAGE_CODE == 'ru':
-                products = products.order_by('name_ru', 'id')
-            elif request.LANGUAGE_CODE == 'be':
-                products = products.order_by('name_be', 'id')
+            products = sort_products_by_name(products)
         elif type_sort == 'za_order':
-            if request.LANGUAGE_CODE == 'en':
-                products = products.order_by('-name', 'id')
-            elif request.LANGUAGE_CODE == 'ru':
-                products = products.order_by('-name_ru', 'id')
-            elif request.LANGUAGE_CODE == 'be':
-                products = products.order_by('-name_be', 'id')
+            products = sort_products_by_name(products, reverse=True)
     else:
         products = products.order_by('-rating', 'id')
 
@@ -162,7 +152,7 @@ def manufacturer(request, m_slug):
     sorting_form = SortingForm()
     manufacturer_filter = ManufacturerFilter(request.GET or None)
 
-    products = []
+    product_ids = []
 
     if request.GET:
         if manufacturer_filter.is_valid():
@@ -170,21 +160,31 @@ def manufacturer(request, m_slug):
 
             if filter_cd['categories']:
                 if '1' in filter_cd['categories']:
-                    products += ComicBookProduct.objects.filter(manufacturer=manufacturer)
+                    product_ids += list(ComicBookProduct.objects.filter(
+                        manufacturer=manufacturer,
+                    ).values_list('id', flat=True))
                 if '2' in filter_cd['categories']:
-                    products += ToyProduct.objects.filter(manufacturer=manufacturer)
+                    product_ids += list(ToyProduct.objects.filter(
+                        manufacturer=manufacturer,
+                    ).values_list('id', flat=True))
                 if '3' in filter_cd['categories']:
-                    products += ClothesProduct.objects.filter(manufacturer=manufacturer)
+                    product_ids += list(ClothesProduct.objects.filter(
+                        manufacturer=manufacturer,
+                    ).values_list('id', flat=True))
                 if '4' in filter_cd['categories']:
-                    products += AccessoryProduct.objects.filter(manufacturer=manufacturer)
+                    product_ids += list(AccessoryProduct.objects.filter(
+                        manufacturer=manufacturer,
+                    ).values_list('id', flat=True))
                 if '5' in filter_cd['categories']:
-                    products += HomeDecorProduct.objects.filter(manufacturer=manufacturer)
+                    product_ids += list(HomeDecorProduct.objects.filter(
+                        manufacturer=manufacturer,
+                    ).values_list('id', flat=True))
             else:
-                products += ComicBookProduct.objects.filter(manufacturer=manufacturer)
-                products += ToyProduct.objects.filter(manufacturer=manufacturer)
-                products += ClothesProduct.objects.filter(manufacturer=manufacturer)
-                products += AccessoryProduct.objects.filter(manufacturer=manufacturer)
-                products += HomeDecorProduct.objects.filter(manufacturer=manufacturer)
+                product_ids += list(Product.objects.filter(
+                    manufacturer=manufacturer,
+                ).values_list('id', flat=True))
+
+            products = Product.objects.filter(id__in=product_ids)
 
             if filter_cd['min_price'] and filter_cd['max_price']:
                 min_price, max_price = get_price_range_from_currency(
@@ -192,49 +192,32 @@ def manufacturer(request, m_slug):
                     f_max_price=int(filter_cd['max_price']),
                     currency_code=request.session.get('currency_code'),
                 )
-
-                products_list = []
-                for p_object in products:
-                    if min_price < p_object.price and p_object.price < max_price:
-                        products_list.append(p_object)
-                products = products_list
+                products = products.filter(
+                    price__range=(min_price, max_price),
+                )
     else:
-        products += ComicBookProduct.objects.filter(manufacturer=manufacturer)
-        products += ToyProduct.objects.filter(manufacturer=manufacturer)
-        products += ClothesProduct.objects.filter(manufacturer=manufacturer)
-        products += AccessoryProduct.objects.filter(manufacturer=manufacturer)
-        products += HomeDecorProduct.objects.filter(manufacturer=manufacturer)
+        products = Product.objects.filter(manufacturer=manufacturer)
 
     if 'products_sort' in request.session:
         type_sort = request.session.get('products_sort')
         sorting_form.fields['type_sort'].initial = type_sort
 
         if type_sort == 'popularity':
-            products.sort(key=attrgetter('rating', 'id'), reverse=True)
+            products = products.order_by('-rating', 'id')
         elif type_sort == 'new_old':
-            products.sort(key=attrgetter('created_at', 'id'), reverse=True)
+            products = products.order_by('-created_at', 'id')
         elif type_sort == 'old_new':
-            products.sort(key=attrgetter('created_at', 'id'))
+            products = products.order_by('created_at', 'id')
         elif type_sort == 'low_high_price':
-            products.sort(key=attrgetter('price', 'id'))
+            products = products.order_by('price', 'id')
         elif type_sort == 'high_low_price':
-            products.sort(key=attrgetter('price', 'id'), reverse=True)
+            products = products.order_by('-price', 'id')
         elif type_sort == 'az_order':
-            if request.LANGUAGE_CODE == 'en':
-                products.sort(key=attrgetter('name', 'id'))
-            elif request.LANGUAGE_CODE == 'ru':
-                products.sort(key=attrgetter('name_ru', 'id'))
-            elif request.LANGUAGE_CODE == 'be':
-                products.sort(key=attrgetter('name_be', 'id'))
+            products = sort_products_by_name(products)
         elif type_sort == 'za_order':
-            if request.LANGUAGE_CODE == 'en':
-                products.sort(key=attrgetter('name', 'id'), reverse=True)
-            elif request.LANGUAGE_CODE == 'ru':
-                products.sort(key=attrgetter('name_ru', 'id'), reverse=True)
-            elif request.LANGUAGE_CODE == 'be':
-                products.sort(key=attrgetter('name_be', 'id'), reverse=True)
+            products = sort_products_by_name(products, reverse=True)
     else:
-        products.sort(key=attrgetter('rating', 'id'), reverse=True)
+        products = products.order_by('-rating', 'id')
 
     paginator = Paginator(products, 15)
     page_number = request.GET.get('page', 1)
@@ -321,19 +304,9 @@ def comics(request):
         elif type_sort == 'high_low_price':
             products = products.order_by('-price', 'id')
         elif type_sort == 'az_order':
-            if request.LANGUAGE_CODE == 'en':
-                products = products.order_by('name', 'id')
-            elif request.LANGUAGE_CODE == 'ru':
-                products = products.order_by('name_ru', 'id')
-            elif request.LANGUAGE_CODE == 'be':
-                products = products.order_by('name_be', 'id')
+            products = sort_products_by_name(products)
         elif type_sort == 'za_order':
-            if request.LANGUAGE_CODE == 'en':
-                products = products.order_by('-name', 'id')
-            elif request.LANGUAGE_CODE == 'ru':
-                products = products.order_by('-name_ru', 'id')
-            elif request.LANGUAGE_CODE == 'be':
-                products = products.order_by('-name_be', 'id')
+            products = sort_products_by_name(products, reverse=True)
     else:
         products = products.order_by('-rating', 'id')
 
@@ -454,19 +427,9 @@ def toys(request):
         elif type_sort == 'high_low_price':
             products = products.order_by('-price', 'id')
         elif type_sort == 'az_order':
-            if request.LANGUAGE_CODE == 'en':
-                products = products.order_by('name', 'id')
-            elif request.LANGUAGE_CODE == 'ru':
-                products = products.order_by('name_ru', 'id')
-            elif request.LANGUAGE_CODE == 'be':
-                products = products.order_by('name_be', 'id')
+            products = sort_products_by_name(products)
         elif type_sort == 'za_order':
-            if request.LANGUAGE_CODE == 'en':
-                products = products.order_by('-name', 'id')
-            elif request.LANGUAGE_CODE == 'ru':
-                products = products.order_by('-name_ru', 'id')
-            elif request.LANGUAGE_CODE == 'be':
-                products = products.order_by('-name_be', 'id')
+            products = sort_products_by_name(products, reverse=True)
     else:
         products = products.order_by('-rating', 'id')
 
@@ -587,19 +550,9 @@ def clothes(request):
         elif type_sort == 'high_low_price':
             products = products.order_by('-price', 'id')
         elif type_sort == 'az_order':
-            if request.LANGUAGE_CODE == 'en':
-                products = products.order_by('name', 'id')
-            elif request.LANGUAGE_CODE == 'ru':
-                products = products.order_by('name_ru', 'id')
-            elif request.LANGUAGE_CODE == 'be':
-                products = products.order_by('name_be', 'id')
+            products = sort_products_by_name(products)
         elif type_sort == 'za_order':
-            if request.LANGUAGE_CODE == 'en':
-                products = products.order_by('-name', 'id')
-            elif request.LANGUAGE_CODE == 'ru':
-                products = products.order_by('-name_ru', 'id')
-            elif request.LANGUAGE_CODE == 'be':
-                products = products.order_by('-name_be', 'id')
+            products = sort_products_by_name(products, reverse=True)
     else:
         products = products.order_by('-rating', 'id')
 
@@ -710,19 +663,9 @@ def accessories(request):
         elif type_sort == 'high_low_price':
             products = products.order_by('-price', 'id')
         elif type_sort == 'az_order':
-            if request.LANGUAGE_CODE == 'en':
-                products = products.order_by('name', 'id')
-            elif request.LANGUAGE_CODE == 'ru':
-                products = products.order_by('name_ru', 'id')
-            elif request.LANGUAGE_CODE == 'be':
-                products = products.order_by('name_be', 'id')
+            products = sort_products_by_name(products)
         elif type_sort == 'za_order':
-            if request.LANGUAGE_CODE == 'en':
-                products = products.order_by('-name', 'id')
-            elif request.LANGUAGE_CODE == 'ru':
-                products = products.order_by('-name_ru', 'id')
-            elif request.LANGUAGE_CODE == 'be':
-                products = products.order_by('-name_be', 'id')
+            products = sort_products_by_name(products, reverse=True)
     else:
         products = products.order_by('-rating', 'id')
 
@@ -833,19 +776,9 @@ def home_decor(request):
         elif type_sort == 'high_low_price':
             products = products.order_by('-price', 'id')
         elif type_sort == 'az_order':
-            if request.LANGUAGE_CODE == 'en':
-                products = products.order_by('name', 'id')
-            elif request.LANGUAGE_CODE == 'ru':
-                products = products.order_by('name_ru', 'id')
-            elif request.LANGUAGE_CODE == 'be':
-                products = products.order_by('name_be', 'id')
+            products = sort_products_by_name(products)
         elif type_sort == 'za_order':
-            if request.LANGUAGE_CODE == 'en':
-                products = products.order_by('-name', 'id')
-            elif request.LANGUAGE_CODE == 'ru':
-                products = products.order_by('-name_ru', 'id')
-            elif request.LANGUAGE_CODE == 'be':
-                products = products.order_by('-name_be', 'id')
+            products = sort_products_by_name(products, reverse=True)
     else:
         products = products.order_by('-rating', 'id')
 
