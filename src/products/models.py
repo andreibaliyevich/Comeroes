@@ -87,6 +87,9 @@ class Product(models.Model):
 
     objects = ProductManager()
 
+    def get_absolute_url(self):
+        return reverse('products:product_detail', args=[self.id])
+
     def __str__(self):
         return f'{ self.id } | { self.name }'
 

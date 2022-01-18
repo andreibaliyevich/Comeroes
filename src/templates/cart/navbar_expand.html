@@ -26,12 +26,12 @@
             <span aria-hidden="true">&times;</span>
           </button>
           <div class="media align-items-center">
-            <a class="d-block mr-2" href="{% url 'products:product_detail' item.product.id %}">
+            <a class="d-block mr-2" href="{{ item.product.get_absolute_url }}">
               <img width="64" src="{{ item.product.main_image.url }}" alt="Product">
             </a>
             <div class="media-body">
               <h6 class="widget-product-title">
-                <a href="{% url 'products:product_detail' item.product.id %}">
+                <a href="{{ item.product.get_absolute_url }}">
                   {{ item.product.translated_name }}
                 </a>
               </h6>

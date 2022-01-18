@@ -119,19 +119,13 @@
           <h2 class="widget-title text-center">{% translate 'Order summary' %}</h2>
           {% for item in cart %}
           <div class="media align-items-center pb-2 border-bottom">
-            <a class="d-block mr-2" href="{% url 'products:product_detail' item.product.id %}">
+            <a class="d-block mr-2" href="{{ item.product.get_absolute_url }}">
               <img src="{{ item.product.main_image.url }}" width="64" height="64" alt="{{ item.product.id }}">
             </a>
             <div class="media-body">
               <h6 class="widget-product-title">
-                <a href="{% url 'products:product_detail' item.product.id %}">
-                  {% if LANGUAGE_CODE == 'en' %}
-                    {{ item.product.name }}
-                  {% elif LANGUAGE_CODE == 'ru' %}
-                    {{ item.product.name_ru }}
-                  {% elif LANGUAGE_CODE == 'be' %}
-                    {{ item.product.name_be }}
-                  {% endif %}
+                <a href="{{ item.product.get_absolute_url }}">
+                  {{ item.product.translated_name }}
                 </a>
               </h6>
               <div class="widget-product-meta">
