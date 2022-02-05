@@ -287,6 +287,7 @@ class HomeDecorFilter(forms.Form):
 
 class ReviewForm(forms.ModelForm):
     """ Review Form """
+
     class Meta:
         model = Review
         fields = ['rating', 'comment']
