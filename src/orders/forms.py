@@ -18,20 +18,13 @@ class OrderCreateForm(forms.ModelForm):
         ]
 
     def __init__(self, request, *args, **kwargs):
-        super(OrderCreateForm, self).__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs)
         city_code = request.session.get('city_code')
         stores = Store.objects.filter(city=city_code)
 
         STORE_CHOICES = []
         STORE_CHOICES.append(('', '---------'))
         for store in stores:
-            if request.LANGUAGE_CODE == 'en':
-                STORE_CHOICES.append((str(store.id), store.address))
-            else:
-                for store_translation in store.storetranslation_set.all():
-                    if store_translation.language == request.LANGUAGE_CODE:
-                        STORE_CHOICES.append(
-                            (str(store.id), store_translation.address))
-                        break
+            STORE_CHOICES.append((str(store.id), store.translated_address))
 
         self.fields['store'].choices = STORE_CHOICES
