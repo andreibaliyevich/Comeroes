@@ -64,6 +64,6 @@ def send_newsletter(subject, text_content, html_content, recipient_email):
 
 def get_newsletter_path(instance, filename):
     """ Get path of newsletter """
-    timestamp = timezone.now().timestamp()
-    file_ext = splitext(filename)[1]
-    return f'newsletter/{ timestamp }{ file_ext }'
+    path_name = timezone.now().strftime('%Y/%m/%d/%H%M%S%f')
+    file_ext = splitext(filename)[1].lower()
+    return f'newsletter/{ path_name }{ file_ext }'

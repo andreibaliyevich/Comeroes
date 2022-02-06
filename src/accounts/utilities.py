@@ -39,6 +39,6 @@ def send_activation_email(user):
 
 def get_user_avatar_path(instance, filename):
     """ Get path of avatar """
-    timestamp = timezone.now().timestamp()
-    file_ext = splitext(filename)[1]
-    return f'avatars/{ timestamp }{ file_ext }'
+    path_name = timezone.now().strftime('%Y/%m/%d/%H%M%S%f')
+    file_ext = splitext(filename)[1].lower()
+    return f'avatars/{ path_name }{ file_ext }'
