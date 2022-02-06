@@ -6,17 +6,7 @@
 {% load main_extras %}
 
 
-{% block title %}{% translate 'Comics' %} |
-{% if LANGUAGE_CODE == 'en' %}
-{{ product.name }}
-{% else %}
-{% for product_translation in product.producttranslation_set.all %}
-{% if product_translation.language == LANGUAGE_CODE %}
-{{ product_translation.name }}
-{% endif %}
-{% endfor %}
-{% endif %}
-{% endblock title %}
+{% block title %}{% translate 'Comics' %} | {{ product.translated_name }}{% endblock title %}
 
 
 {% block stylesheet %}
@@ -52,17 +42,7 @@
       </nav>
     </div>
     <div class="order-lg-1 pr-lg-4 text-center text-lg-left">
-      <h1 class="h3 text-light mb-0">
-        {% if LANGUAGE_CODE == 'en' %}
-        {{ product.name }}
-        {% else %}
-        {% for product_translation in product.producttranslation_set.all %}
-        {% if product_translation.language == LANGUAGE_CODE %}
-        {{ product_translation.name }}
-        {% endif %}
-        {% endfor %}
-        {% endif %}
-      </h1>
+      <h1 class="h3 text-light mb-0">{{ product.translated_name }}</h1>
     </div>
   </div>
 </div>
@@ -208,15 +188,7 @@
                 </div>
                 <div class="collapse show" id="description" data-parent="#productPanels">
                   <div class="card-body font-size-sm pl-4">
-                    {% if LANGUAGE_CODE == 'en' %}
-                    {{ product.description|linebreaks }}
-                    {% else %}
-                    {% for product_translation in product.producttranslation_set.all %}
-                    {% if product_translation.language == LANGUAGE_CODE %}
-                    {{ product_translation.description|linebreaks }}
-                    {% endif %}
-                    {% endfor %}
-                    {% endif %}
+                    {{ product.translated_description|linebreaks }}
                   </div>
                 </div>
               </div>
@@ -342,13 +314,13 @@
             </div>
             {# Sharing #}
             <h6 class="d-inline-block align-middle font-size-base my-2 mr-2">{% translate 'Share' %}:</h6>
-            <a class="share-btn sb-vk mr-2 my-2" href="https://vk.com/share.php?url={{ request.build_absolute_uri }}&title={% if LANGUAGE_CODE == 'en' %}{{ product.name }}{% else %}{% for product_translation in product.producttranslation_set.all %}{% if product_translation.language == LANGUAGE_CODE %}{{ product_translation.name }}{% endif %}{% endfor %}{% endif %}&noparse=true" target="_blank" rel="nofollow" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+            <a class="share-btn sb-vk mr-2 my-2" href="https://vk.com/share.php?url={{ request.build_absolute_uri }}&title={{ product.translated_name }}&noparse=true" target="_blank" rel="nofollow" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
               <i class="czi-vk"></i>VK
             </a>
             <a class="share-btn sb-facebook mr-2 my-2" href="https://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri }}" target="_blank" rel="nofollow" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
               <i class="czi-facebook"></i>Facebook
             </a>
-            <a class="share-btn sb-twitter my-2" href="https://twitter.com/intent/tweet?url={{ request.build_absolute_uri }}&text={% if LANGUAGE_CODE == 'en' %}{{ product.name }}{% else %}{% for product_translation in product.producttranslation_set.all %}{% if product_translation.language == LANGUAGE_CODE %}{{ product_translation.name }}{% endif %}{% endfor %}{% endif %}" target="_blank" rel="nofollow" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+            <a class="share-btn sb-twitter my-2" href="https://twitter.com/intent/tweet?url={{ request.build_absolute_uri }}&text={{ product.translated_name }}" target="_blank" rel="nofollow" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
               <i class="czi-twitter"></i>Twitter
             </a>
           </div>
