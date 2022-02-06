@@ -25,7 +25,8 @@ class OSUser(AbstractBaseUser, PermissionsMixin):
     )
 
     avatar = ThumbnailerImageField(
-        default='avatars/default.png',
+        null=True,
+        blank=True,
         upload_to=get_user_avatar_path,
         resize_source={
             'size': (300, 300),

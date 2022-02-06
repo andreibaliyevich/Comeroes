@@ -1,6 +1,7 @@
 {% extends 'main/base.html' %}
 
 {% load i18n %}
+{% load static %}
 
 
 {% block content %}
@@ -37,7 +38,7 @@
         <div class="px-4 mb-4">
           <div class="media align-items-center">
             <div class="img-thumbnail rounded-circle position-relative" style="width: 6.375rem;">
-              <img class="rounded-circle" src="{{ user.avatar.url }}" alt="{% translate 'Your Avatar' %}">
+              <img class="rounded-circle" src="{% if user.avatar %}{{ user.avatar.url }}{% else %}{% static 'img/avatar-default.png' %}{% endif %}" alt="{% translate 'Your Avatar' %}">
             </div>
             <div class="media-body pl-3">
               <h3 class="font-size-base mb-0">{% firstof user.get_full_name user.first_name user.email %}</h3>
