@@ -142,7 +142,7 @@ class ComicBookProduct(Product):
     language = models.CharField(
         max_length=2,
         choices=settings.LANGUAGES,
-        default=settings.LANGUAGES[0][0],
+        default=settings.LANGUAGE_CODE,
         verbose_name=_('Language'),
     )
 
