@@ -23,6 +23,20 @@ class Store(models.Model):
         verbose_name=_('Location'),
     )
 
+    meta_description = models.CharField(
+        blank=True,
+        max_length=255,
+        verbose_name=_('Description'),
+    )
+    meta_keywords = models.CharField(
+        blank=True,
+        max_length=255,
+        help_text=_('Separate keywords with commas.'),
+        verbose_name=_('Keywords'),
+    )
+    translated_meta_description = TranslatedField('meta_description')
+    translated_meta_keywords = TranslatedField('meta_keywords')
+
     main_image = models.ImageField(
         upload_to=get_store_image_path,
         verbose_name=_('Main image'),
@@ -59,7 +73,7 @@ class Store(models.Model):
         super().save(*args, **kwargs)
 
     def __str__(self):
-        return f'{ self.city } | { self.address }'
+        return f'{ self.city } | { self.translated_address }'
 
     def get_absolute_url(self):
         return reverse('main:store_info', args=[self.id])
@@ -86,6 +100,18 @@ class StoreTranslation(models.Model):
     )
 
     address = models.CharField(max_length=255, verbose_name=_('Address'))
+
+    meta_description = models.CharField(
+        blank=True,
+        max_length=255,
+        verbose_name=_('Description'),
+    )
+    meta_keywords = models.CharField(
+        blank=True,
+        max_length=255,
+        help_text=_('Separate keywords with commas.'),
+        verbose_name=_('Keywords'),
+    )
 
     class Meta:
         verbose_name = _('Store Translation')

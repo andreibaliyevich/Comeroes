@@ -4,7 +4,7 @@ from products.models import Warehouse
 from .models import Store, StoreTranslation, StoreImage, ContactMessage
 
 
-class StoreTranslationInline(admin.TabularInline):
+class StoreTranslationInline(admin.StackedInline):
     model = StoreTranslation
     extra = 0
 
@@ -32,6 +32,9 @@ class StoreAdmin(admin.OSMGeoAdmin):
                 'main_image',
                 'is_main',
             )
+        }),
+        (_('Metadata'), {
+            'fields': ('meta_description', 'meta_keywords'),
         }),
         (_('Contacts'), {
             'fields': (

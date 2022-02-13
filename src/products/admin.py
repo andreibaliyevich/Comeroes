@@ -17,7 +17,7 @@ from .models import (
 class ManufacturerAdmin(admin.ModelAdmin):
     """ Manufacturer Model for admin """
     ordering = ('name',)
-    list_display = ('name', 'slug')
+    list_display = ('__str__', 'slug')
     prepopulated_fields = {'slug': ('name',)}
 
 
@@ -68,7 +68,7 @@ class WarehouseInline(admin.TabularInline):
 class ComicBookProductAdmin(admin.ModelAdmin):
     """ ComicBookProduct Model for admin """
     list_display = (
-        'name',
+        '__str__',
         'manufacturer',
         'category',
         'price',
@@ -94,6 +94,9 @@ class ComicBookProductAdmin(admin.ModelAdmin):
                 'rating',
             ),
         }),
+        (_('Metadata'), {
+            'fields': ('meta_description', 'meta_keywords'),
+        }),
         (_('Description / Specifications'), {
             'fields': (
                 'description',
@@ -113,7 +116,7 @@ class ComicBookProductAdmin(admin.ModelAdmin):
 class ToyProductAdmin(admin.ModelAdmin):
     """ ToyProduct Model for admin """
     list_display = (
-        'name',
+        '__str__',
         'manufacturer',
         'category',
         'price',
@@ -137,6 +140,9 @@ class ToyProductAdmin(admin.ModelAdmin):
                 ('price', 'old_price'),
                 'rating',
             ),
+        }),
+        (_('Metadata'), {
+            'fields': ('meta_description', 'meta_keywords'),
         }),
         (_('Description / Specifications'), {
             'fields': (
@@ -156,7 +162,7 @@ class ToyProductAdmin(admin.ModelAdmin):
 class ClothesProductAdmin(admin.ModelAdmin):
     """ ClothesProduct Model for admin """
     list_display = (
-        'name',
+        '__str__',
         'manufacturer',
         'category',
         'price',
@@ -180,6 +186,9 @@ class ClothesProductAdmin(admin.ModelAdmin):
                 ('price', 'old_price'),
                 'rating',
             ),
+        }),
+        (_('Metadata'), {
+            'fields': ('meta_description', 'meta_keywords'),
         }),
         (_('Description / Specifications'), {
             'fields': (
@@ -197,7 +206,7 @@ class ClothesProductAdmin(admin.ModelAdmin):
 class AccessoryProductAdmin(admin.ModelAdmin):
     """ AccessoryProduct Model for admin """
     list_display = (
-        'name',
+        '__str__',
         'manufacturer',
         'category',
         'price',
@@ -221,6 +230,9 @@ class AccessoryProductAdmin(admin.ModelAdmin):
                 ('price', 'old_price'),
                 'rating',
             ),
+        }),
+        (_('Metadata'), {
+            'fields': ('meta_description', 'meta_keywords'),
         }),
         (_('Description / Specifications'), {
             'fields': (
@@ -236,7 +248,7 @@ class AccessoryProductAdmin(admin.ModelAdmin):
 class HomeDecorProductAdmin(admin.ModelAdmin):
     """ HomeDecorProduct Model for admin """
     list_display = (
-        'name',
+        '__str__',
         'manufacturer',
         'category',
         'price',
@@ -260,6 +272,9 @@ class HomeDecorProductAdmin(admin.ModelAdmin):
                 ('price', 'old_price'),
                 'rating',
             ),
+        }),
+        (_('Metadata'), {
+            'fields': ('meta_description', 'meta_keywords'),
         }),
         (_('Description / Specifications'), {
             'fields': (

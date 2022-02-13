@@ -6,6 +6,9 @@
 {% load main_extras %}
 
 
+{% block meta_description %}{{ product.translated_meta_description }}{% endblock meta_description %}
+{% block meta_keywords %}{{ product.translated_meta_keywords }}{% endblock meta_keywords %}
+
 {% block title %}{% translate 'Home Decor' %} | {{ product.translated_name }}{% endblock title %}
 
 

@@ -47,6 +47,20 @@ class Product(models.Model):
     translated_name = TranslatedField('name')
     slug = models.SlugField(max_length=255, unique=True, verbose_name=_('Slug'))
 
+    meta_description = models.CharField(
+        blank=True,
+        max_length=255,
+        verbose_name=_('Description'),
+    )
+    meta_keywords = models.CharField(
+        blank=True,
+        max_length=255,
+        help_text=_('Separate keywords with commas.'),
+        verbose_name=_('Keywords'),
+    )
+    translated_meta_description = TranslatedField('meta_description')
+    translated_meta_keywords = TranslatedField('meta_keywords')
+
     main_image = models.ImageField(
         upload_to=get_product_image_path,
         verbose_name=_('Main image'),
@@ -91,7 +105,7 @@ class Product(models.Model):
         return reverse('products:product_detail', args=[self.id])
 
     def __str__(self):
-        return f'{ self.id } | { self.name }'
+        return f'{ self.id } | { self.translated_name }'
 
 
 class ComicBookProduct(Product):
@@ -357,6 +371,19 @@ class ProductTranslation(models.Model):
     )
 
     name = models.CharField(max_length=255, verbose_name=_('Name'))
+
+    meta_description = models.CharField(
+        blank=True,
+        max_length=255,
+        verbose_name=_('Description'),
+    )
+    meta_keywords = models.CharField(
+        blank=True,
+        max_length=255,
+        help_text=_('Separate keywords with commas.'),
+        verbose_name=_('Keywords'),
+    )
+
     description = models.TextField(blank=True, verbose_name=_('Description'))
 
     class Meta:
