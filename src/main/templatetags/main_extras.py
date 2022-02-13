@@ -1,5 +1,5 @@
 from django import template
-from main.utilities import get_value_in_currency
+from main.services import get_value_in_currency
 
 
 register = template.Library()

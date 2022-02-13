@@ -2,7 +2,7 @@ from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render
 from django.utils.translation import gettext_lazy as _
 from django.views.decorators.http import require_POST
-from main.utilities import get_value_in_currency
+from main.services import get_value_in_currency
 from products.models import Product
 from coupons.forms import CouponApllyForm
 from .cart import Cart

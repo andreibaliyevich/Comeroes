@@ -7,7 +7,7 @@ from django.http import Http404, HttpResponse, JsonResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from django.utils.translation import gettext_lazy as _
 from django.views.decorators.http import require_POST
-from main.utilities import get_price_range_from_currency
+from main.services import get_price_range_from_currency
 from .forms import (
     SortingForm,
     ManufacturerFilter,
