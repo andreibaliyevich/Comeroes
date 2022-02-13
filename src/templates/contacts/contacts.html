@@ -3,6 +3,9 @@
 {% load i18n %}
 
 
+{% block meta_description %}{{ main_store.translated_meta_description }}{% endblock meta_description %}
+{% block meta_keywords %}{{ main_store.translated_meta_keywords }}{% endblock meta_keywords %}
+
 {% block title %}{% translate 'Contacts' %}{% endblock title %}
 
 
