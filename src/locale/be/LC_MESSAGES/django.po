@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-19 17:48+0000\n"
+"POT-Creation-Date: 2022-02-13 12:42+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -57,7 +57,7 @@ msgstr "Падпісацца на рассылку навін"
 msgid "Passwords don't match."
 msgstr "Паролі не супадаюць."
 
-#: accounts/forms.py:67 accounts/models.py:36
+#: accounts/forms.py:67 accounts/models.py:37
 msgid "Avatar"
 msgstr "Аватар"
 
@@ -73,8 +73,8 @@ msgstr "Імя"
 msgid "Last name"
 msgstr "Прозвішча"
 
-#: accounts/forms.py:82 accounts/models.py:47 contacts/models.py:125
-#: orders/models.py:37 templates/contacts/contacts.html:237
+#: accounts/forms.py:82 accounts/models.py:48 contacts/models.py:154
+#: orders/models.py:37 templates/contacts/contacts.html:216
 msgid "Phone"
 msgstr "Тэлефон"
 
@@ -126,7 +126,7 @@ msgstr "Лістапада"
 msgid "December"
 msgstr "Снежня"
 
-#: accounts/forms.py:104 accounts/models.py:52
+#: accounts/forms.py:104 accounts/models.py:53
 msgid "Date of Birth"
 msgstr "Дата нараджэння"
 
@@ -146,81 +146,81 @@ msgstr "У суперкарыстальніка павінна быць is_staff
 msgid "Superuser must have is_superuser=True."
 msgstr "У суперкарыстальніка павінна быць is_superuser=True."
 
-#: accounts/models.py:44 contacts/models.py:122 orders/models.py:34
+#: accounts/models.py:45 contacts/models.py:151 orders/models.py:34
 msgid "Wrong format!"
 msgstr "Няправільны фармат!"
 
-#: accounts/models.py:56
+#: accounts/models.py:57
 msgid "Is subscription"
 msgstr "Падпіска"
 
-#: accounts/models.py:59 coupons/models.py:18
+#: accounts/models.py:60 coupons/models.py:18
 msgid "Active"
 msgstr "Актыўны"
 
-#: accounts/models.py:62
+#: accounts/models.py:63
 msgid "Staff status"
 msgstr "Статус персанала"
 
-#: accounts/models.py:66
+#: accounts/models.py:67
 msgid "Superuser status"
 msgstr "Статус суперкарыстальніка"
 
-#: accounts/models.py:71
+#: accounts/models.py:72
 msgid "Last visit"
 msgstr "Апошняе наведванне"
 
-#: accounts/models.py:75
+#: accounts/models.py:76
 msgid "Last login"
 msgstr "Апошні ўваход"
 
-#: accounts/models.py:79
+#: accounts/models.py:80
 msgid "Date joined"
 msgstr "Дата рэгістрацыі"
 
-#: accounts/models.py:97 accounts/models.py:107 orders/models.py:23
-#: products/models.py:409 wishlist/models.py:12
+#: accounts/models.py:98 accounts/models.py:108 orders/models.py:23
+#: products/models.py:446 wishlist/models.py:12
 msgid "User"
 msgstr "Карыстальнік"
 
-#: accounts/models.py:98
+#: accounts/models.py:99
 msgid "Users"
 msgstr "Карыстальнікі"
 
-#: accounts/models.py:110
+#: accounts/models.py:111
 msgid "Locality"
 msgstr "Населены пункт"
 
-#: accounts/models.py:113
+#: accounts/models.py:114
 msgid "Street, House"
 msgstr "Вуліца, дом"
 
-#: accounts/models.py:118
+#: accounts/models.py:119
 msgid "Porch"
 msgstr "Пад'езд"
 
-#: accounts/models.py:123
+#: accounts/models.py:124
 msgid "Level"
 msgstr "Паверх"
 
-#: accounts/models.py:128
+#: accounts/models.py:129
 msgid "Apt / office"
 msgstr "Кв. / офіс"
 
-#: accounts/models.py:132
+#: accounts/models.py:133
 msgid "Is Primary"
 msgstr "Асноўны"
 
-#: accounts/models.py:149 contacts/models.py:18 contacts/models.py:85
+#: accounts/models.py:150 contacts/models.py:19 contacts/models.py:102
 #: orders/models.py:43 templates/accounts/account_addresses.html:81
 msgid "Address"
 msgstr "Адрас"
 
-#: accounts/models.py:150 templates/accounts/account_address_change.html:12
+#: accounts/models.py:151 templates/accounts/account_address_change.html:12
 #: templates/accounts/account_addresses.html:7
 #: templates/accounts/account_addresses.html:60
 #: templates/accounts/account_addresses.html:63
-#: templates/accounts/account_base.html:87 templates/main/base.html:305
+#: templates/accounts/account_base.html:88 templates/main/base.html:305
 msgid "Addresses"
 msgstr "Адрасы"
 
@@ -282,138 +282,163 @@ msgstr "Ваш уліковы запіс выдаленая."
 msgid "Cart"
 msgstr "Кошык"
 
-#: cart/views.py:28 products/views.py:940 wishlist/views.py:31
+#: cart/views.py:28 products/views.py:859 wishlist/views.py:31
 msgid "Product does not exist!"
 msgstr "Тавар не існуе!"
 
-#: contacts/admin.py:36 contacts/apps.py:8 templates/contacts/contacts.html:6
-#: templates/contacts/contacts.html:27 templates/contacts/contacts.html:32
-#: templates/contacts/store_detail.html:28 templates/main/base.html:501
+#: contacts/admin.py:36 products/admin.py:97 products/admin.py:144
+#: products/admin.py:190 products/admin.py:234 products/admin.py:276
+msgid "Metadata"
+msgstr "Метададзеныя"
+
+#: contacts/admin.py:39 contacts/apps.py:8 templates/contacts/contacts.html:9
+#: templates/contacts/contacts.html:30 templates/contacts/contacts.html:35
+#: templates/contacts/store_detail.html:31 templates/main/base.html:501
 msgid "Contacts"
 msgstr "Кантакты"
 
-#: contacts/admin.py:42 templates/contacts/contacts.html:67
-#: templates/contacts/store_detail.html:70
+#: contacts/admin.py:45 templates/contacts/contacts.html:62
+#: templates/contacts/store_detail.html:65
 msgid "Working hours"
 msgstr "Працоўныя гадзіны"
 
-#: contacts/models.py:15
+#: contacts/models.py:16
 msgid "City"
 msgstr "Горад"
 
-#: contacts/models.py:21
+#: contacts/models.py:23
 msgid "Location"
 msgstr "Размяшчэнне"
 
-#: contacts/models.py:26 products/models.py:49
-#: templates/contacts/store_detail.html:131
+#: contacts/models.py:29 contacts/models.py:107 products/models.py:53
+#: products/models.py:90 products/models.py:378 products/models.py:387
+#: templates/products/detail/accessory.html:185
+#: templates/products/detail/clothes.html:185
+#: templates/products/detail/comic_book.html:185
+#: templates/products/detail/home_decor.html:185
+#: templates/products/detail/toy.html:185
+msgid "Description"
+msgstr "Апісанне"
+
+#: contacts/models.py:34 contacts/models.py:112 products/models.py:58
+#: products/models.py:383
+msgid "Separate keywords with commas."
+msgstr ""
+
+#: contacts/models.py:35 contacts/models.py:113 products/models.py:59
+#: products/models.py:384
+msgid "Keywords"
+msgstr ""
+
+#: contacts/models.py:42 products/models.py:66
+#: templates/contacts/store_detail.html:126
 msgid "Main image"
 msgstr "Асноўнае выява"
 
-#: contacts/models.py:27 contacts/models.py:104
+#: contacts/models.py:43 contacts/models.py:133
 msgid "Recommend: 1000 x 667 px."
 msgstr "Рэкамендуем: 1000 x 667 пікселяў."
 
-#: contacts/models.py:32
+#: contacts/models.py:48
 msgid "Phone for customers"
 msgstr "Тэлефон для кліентаў"
 
-#: contacts/models.py:36
+#: contacts/models.py:52
 msgid "Phone for support"
 msgstr "Тэлефон для падтрымкі"
 
-#: contacts/models.py:39
+#: contacts/models.py:55
 msgid "Email for customers"
 msgstr "Электронная пошта для кліентаў"
 
-#: contacts/models.py:40
+#: contacts/models.py:56
 msgid "Email for support"
 msgstr "Электронная пошта для падтрымкі"
 
-#: contacts/models.py:43
+#: contacts/models.py:59
 msgid "Start time in weekdays"
 msgstr "Час пачатку ў буднія дні"
 
-#: contacts/models.py:45
+#: contacts/models.py:61
 msgid "End time in weekdays"
 msgstr "Час заканчэння ў буднія дні"
 
-#: contacts/models.py:47
+#: contacts/models.py:63
 msgid "Start time in weekend"
 msgstr "Час пачатку ў выходныя дні"
 
-#: contacts/models.py:49
+#: contacts/models.py:65
 msgid "End time in weekend"
 msgstr "Час заканчэння ў выходныя дні"
 
-#: contacts/models.py:51
+#: contacts/models.py:67
 msgid "Main"
 msgstr "Галоўны"
 
-#: contacts/models.py:66 contacts/models.py:77 contacts/models.py:99
-#: orders/models.py:50 products/models.py:388
+#: contacts/models.py:82 contacts/models.py:94 contacts/models.py:128
+#: orders/models.py:50 products/models.py:425
 msgid "Store"
 msgstr "Магазін"
 
-#: contacts/models.py:67
+#: contacts/models.py:83
 msgid "Stores"
 msgstr "Магазіны"
 
-#: contacts/models.py:82 products/models.py:137 products/models.py:346
-#: templates/products/detail/comic_book.html:268
+#: contacts/models.py:99 products/models.py:160 products/models.py:370
+#: templates/products/detail/comic_book.html:243
 msgid "Language"
 msgstr "Мова"
 
-#: contacts/models.py:88
+#: contacts/models.py:117
 msgid "Store Translation"
 msgstr "Пераклад магазина"
 
-#: contacts/models.py:89
+#: contacts/models.py:118
 msgid "Store Translations"
 msgstr "Пераклады магазинаў"
 
-#: contacts/models.py:103 products/models.py:368
+#: contacts/models.py:132 products/models.py:405
 msgid "Image"
 msgstr "Малюнак"
 
-#: contacts/models.py:108
+#: contacts/models.py:137
 msgid "Image of Store"
 msgstr "Выява магазіна"
 
-#: contacts/models.py:109
+#: contacts/models.py:138
 msgid "Images of Store"
 msgstr "Выявы магазіна"
 
-#: contacts/models.py:115 products/models.py:15 products/models.py:44
-#: products/models.py:349 templates/contacts/contacts.html:223
+#: contacts/models.py:144 products/models.py:17 products/models.py:46
+#: products/models.py:373 templates/contacts/contacts.html:202
 msgid "Name"
 msgstr "Назва"
 
-#: contacts/models.py:116 templates/contacts/contacts.html:230
+#: contacts/models.py:145 templates/contacts/contacts.html:209
 msgid "Email"
 msgstr ""
 
-#: contacts/models.py:131 newsletter/models.py:23 support/models.py:12
-#: templates/contacts/contacts.html:243 templates/support/tickets.html:70
+#: contacts/models.py:160 newsletter/models.py:23 support/models.py:12
+#: templates/contacts/contacts.html:222 templates/support/tickets.html:70
 msgid "Subject"
 msgstr "Тэма"
 
-#: contacts/models.py:133 support/models.py:79
+#: contacts/models.py:162 support/models.py:79
 msgid "Content"
 msgstr "Змест"
 
-#: contacts/models.py:136 newsletter/models.py:35 orders/models.py:94
-#: products/models.py:77 products/models.py:428 support/models.py:50
+#: contacts/models.py:165 newsletter/models.py:35 orders/models.py:94
+#: products/models.py:95 products/models.py:465 support/models.py:50
 #: support/models.py:83 wishlist/models.py:22
 msgid "Created at"
 msgstr "Створана ў"
 
-#: contacts/models.py:140 support/models.py:87
-#: templates/contacts/contacts.html:249
+#: contacts/models.py:169 support/models.py:87
+#: templates/contacts/contacts.html:228
 msgid "Message"
 msgstr "Паведамленне"
 
-#: contacts/models.py:141 support/models.py:88
+#: contacts/models.py:170 support/models.py:88
 msgid "Messages"
 msgstr "Паведамлення"
 
@@ -425,9 +450,9 @@ msgstr "Дзякуй за ваша паведамленне."
 msgid "Coupons"
 msgstr "Купоны"
 
-#: coupons/forms.py:7 templates/cart/detail.html:131
-#: templates/cart/detail.html:140 templates/orders/create.html:158
-#: templates/orders/create.html:167 templates/orders/detail.html:70
+#: coupons/forms.py:7 templates/cart/detail.html:123
+#: templates/cart/detail.html:132 templates/orders/create.html:152
+#: templates/orders/create.html:161 templates/orders/detail.html:64
 msgid "Promo code"
 msgstr "Промокод"
 
@@ -443,9 +468,9 @@ msgstr "Дзейнічае з"
 msgid "Valid until"
 msgstr "Дзейнічае да"
 
-#: coupons/models.py:16 orders/models.py:66 templates/cart/detail.html:135
-#: templates/cart/detail.html:144 templates/orders/create.html:162
-#: templates/orders/create.html:171 templates/orders/detail.html:78
+#: coupons/models.py:16 orders/models.py:66 templates/cart/detail.html:127
+#: templates/cart/detail.html:136 templates/orders/create.html:156
+#: templates/orders/create.html:165 templates/orders/detail.html:72
 msgid "Discount"
 msgstr "Зніжка"
 
@@ -497,7 +522,7 @@ msgstr "Змест (text)"
 msgid "Content (html)"
 msgstr "Змест (html)"
 
-#: newsletter/models.py:39 orders/models.py:98 products/models.py:81
+#: newsletter/models.py:39 orders/models.py:98 products/models.py:99
 #: support/models.py:54
 msgid "Updated at"
 msgstr "Абноўлена ў"
@@ -541,57 +566,57 @@ msgid "Email has been removed from subscriptions earlier."
 msgstr "Электронная пошта была выдаленая з падпісак раней."
 
 #: orders/apps.py:8 orders/models.py:109
-#: templates/accounts/account_base.html:54 templates/main/base.html:282
+#: templates/accounts/account_base.html:55 templates/main/base.html:282
 #: templates/orders/detail.html:12
 msgid "Orders"
 msgstr "Заказы"
 
-#: orders/models.py:72 templates/orders/detail.html:86
+#: orders/models.py:72 templates/orders/detail.html:80
 #: templates/orders/list.html:37
 msgid "Total cost"
 msgstr "Выніковы кошт"
 
-#: orders/models.py:76 templates/orders/detail.html:109
+#: orders/models.py:76 templates/orders/detail.html:103
 #: templates/orders/list.html:49
 msgid "Pending"
 msgstr "У чаканні"
 
-#: orders/models.py:77 templates/orders/detail.html:111
+#: orders/models.py:77 templates/orders/detail.html:105
 #: templates/orders/list.html:51
 msgid "Failed"
 msgstr "Не атрымалася"
 
-#: orders/models.py:78 templates/orders/detail.html:113
+#: orders/models.py:78 templates/orders/detail.html:107
 #: templates/orders/list.html:53
 msgid "Processing"
 msgstr "Апрацоўка"
 
-#: orders/models.py:79 templates/orders/detail.html:115
+#: orders/models.py:79 templates/orders/detail.html:109
 #: templates/orders/list.html:55
 msgid "Shipped"
 msgstr "Адпраўлены"
 
-#: orders/models.py:80 templates/orders/detail.html:117
+#: orders/models.py:80 templates/orders/detail.html:111
 #: templates/orders/list.html:57
 msgid "Completed"
 msgstr "Завершаны"
 
-#: orders/models.py:81 templates/orders/detail.html:119
+#: orders/models.py:81 templates/orders/detail.html:113
 #: templates/orders/list.html:59
 msgid "Delayed"
 msgstr "Адкладзены"
 
-#: orders/models.py:82 templates/orders/detail.html:121
+#: orders/models.py:82 templates/orders/detail.html:115
 #: templates/orders/list.html:61
 msgid "Canceled"
 msgstr "Адменена"
 
-#: orders/models.py:83 templates/orders/detail.html:123
+#: orders/models.py:83 templates/orders/detail.html:117
 #: templates/orders/list.html:63
 msgid "Refunded"
 msgstr "Вяртаецца"
 
-#: orders/models.py:89 support/models.py:45 templates/orders/detail.html:107
+#: orders/models.py:89 support/models.py:45 templates/orders/detail.html:101
 #: templates/orders/list.html:36 templates/support/ticket_detail.html:58
 #: templates/support/ticket_detail.html:102 templates/support/tickets.html:74
 msgid "Status"
@@ -601,18 +626,18 @@ msgstr "Статус"
 msgid "Order"
 msgstr "Заказ"
 
-#: orders/models.py:123 products/admin.py:87 products/admin.py:131
-#: products/admin.py:174 products/admin.py:215 products/admin.py:254
-#: products/models.py:341 products/models.py:364 products/models.py:383
-#: products/models.py:404 templates/products/detail/accessory.html:51
-#: templates/products/detail/clothes.html:50
-#: templates/products/detail/comic_book.html:50
-#: templates/products/detail/home_decor.html:50
-#: templates/products/detail/toy.html:50 wishlist/models.py:17
+#: orders/models.py:123 products/admin.py:87 products/admin.py:134
+#: products/admin.py:180 products/admin.py:224 products/admin.py:266
+#: products/models.py:365 products/models.py:401 products/models.py:420
+#: products/models.py:441 templates/products/detail/accessory.html:43
+#: templates/products/detail/clothes.html:43
+#: templates/products/detail/comic_book.html:43
+#: templates/products/detail/home_decor.html:43
+#: templates/products/detail/toy.html:43 wishlist/models.py:17
 msgid "Product"
 msgstr "Тавар"
 
-#: orders/models.py:128 products/models.py:57 templates/cart/detail.html:75
+#: orders/models.py:128 products/models.py:74 templates/cart/detail.html:67
 #: templates/products/base/accessories.html:62
 #: templates/products/base/clothes.html:62
 #: templates/products/base/comics.html:62
@@ -622,11 +647,11 @@ msgstr "Тавар"
 msgid "Price"
 msgstr "Цана"
 
-#: orders/models.py:132 templates/cart/detail.html:94
+#: orders/models.py:132 templates/cart/detail.html:86
 msgid "Quantity"
 msgstr "Колькасць"
 
-#: orders/models.py:137 templates/cart/detail.html:83
+#: orders/models.py:137 templates/cart/detail.html:75
 msgid "Total price"
 msgstr "Агульная цана"
 
@@ -662,8 +687,8 @@ msgstr "Старыя цэны былі скінутыя"
 msgid "Reset old prices"
 msgstr "Скінуць старыя цэны"
 
-#: products/admin.py:97 products/admin.py:141 products/admin.py:184
-#: products/admin.py:225 products/admin.py:264
+#: products/admin.py:100 products/admin.py:147 products/admin.py:193
+#: products/admin.py:237 products/admin.py:279
 msgid "Description / Specifications"
 msgstr "Апісанне / Характарыстыкі"
 
@@ -713,32 +738,32 @@ msgstr "Мiнiмальная цана"
 msgid "Max price"
 msgstr "Максімальная цана"
 
-#: products/forms.py:54 products/models.py:145 templates/main/base.html:210
+#: products/forms.py:54 products/models.py:168 templates/main/base.html:210
 #: templates/main/base.html:217 templates/main/base.html:224
 #: templates/main/base.html:231 templates/main/base.html:238
 #: templates/main/base.html:245 templates/main/base.html:353
 #: templates/main/base.html:384 templates/main/index.html:79
 #: templates/products/base/comics.html:8 templates/products/base/comics.html:36
 #: templates/products/base/comics.html:41
-#: templates/products/detail/comic_book.html:9
-#: templates/products/detail/comic_book.html:48 templates/products/shop.html:41
+#: templates/products/detail/comic_book.html:12
+#: templates/products/detail/comic_book.html:41 templates/products/shop.html:41
 #: templates/products/shop.html:44
 msgid "Comics"
 msgstr "Коміксы"
 
-#: products/forms.py:55 products/models.py:213 templates/main/base.html:211
+#: products/forms.py:55 products/models.py:236 templates/main/base.html:211
 #: templates/main/base.html:218 templates/main/base.html:225
 #: templates/main/base.html:232 templates/main/base.html:239
 #: templates/main/base.html:246 templates/main/base.html:356
 #: templates/main/base.html:385 templates/main/index.html:129
 #: templates/products/base/toys.html:8 templates/products/base/toys.html:36
-#: templates/products/base/toys.html:41 templates/products/detail/toy.html:9
-#: templates/products/detail/toy.html:48 templates/products/shop.html:69
+#: templates/products/base/toys.html:41 templates/products/detail/toy.html:12
+#: templates/products/detail/toy.html:41 templates/products/shop.html:69
 #: templates/products/shop.html:72
 msgid "Toys"
 msgstr "Цацкі"
 
-#: products/forms.py:56 products/models.py:276 products/models.py:277
+#: products/forms.py:56 products/models.py:299 products/models.py:300
 #: templates/main/base.html:212 templates/main/base.html:219
 #: templates/main/base.html:226 templates/main/base.html:233
 #: templates/main/base.html:240 templates/main/base.html:247
@@ -746,26 +771,26 @@ msgstr "Цацкі"
 #: templates/main/index.html:178 templates/products/base/clothes.html:8
 #: templates/products/base/clothes.html:36
 #: templates/products/base/clothes.html:41
-#: templates/products/detail/clothes.html:9
-#: templates/products/detail/clothes.html:48 templates/products/shop.html:97
+#: templates/products/detail/clothes.html:12
+#: templates/products/detail/clothes.html:41 templates/products/shop.html:97
 #: templates/products/shop.html:100
 msgid "Clothes"
 msgstr "Адзенне"
 
-#: products/forms.py:57 products/models.py:306 templates/main/base.html:213
+#: products/forms.py:57 products/models.py:329 templates/main/base.html:213
 #: templates/main/base.html:220 templates/main/base.html:227
 #: templates/main/base.html:234 templates/main/base.html:241
 #: templates/main/base.html:248 templates/main/base.html:362
 #: templates/main/base.html:387 templates/products/base/accessories.html:8
 #: templates/products/base/accessories.html:36
 #: templates/products/base/accessories.html:41
-#: templates/products/detail/accessory.html:10
-#: templates/products/detail/accessory.html:49 templates/products/shop.html:125
+#: templates/products/detail/accessory.html:12
+#: templates/products/detail/accessory.html:41 templates/products/shop.html:125
 #: templates/products/shop.html:128
 msgid "Accessories"
 msgstr "Аксэсуары"
 
-#: products/forms.py:58 products/models.py:331 products/models.py:332
+#: products/forms.py:58 products/models.py:354 products/models.py:355
 #: templates/main/base.html:214 templates/main/base.html:221
 #: templates/main/base.html:228 templates/main/base.html:235
 #: templates/main/base.html:242 templates/main/base.html:249
@@ -773,8 +798,8 @@ msgstr "Аксэсуары"
 #: templates/products/base/home_decor.html:8
 #: templates/products/base/home_decor.html:36
 #: templates/products/base/home_decor.html:41
-#: templates/products/detail/home_decor.html:9
-#: templates/products/detail/home_decor.html:48
+#: templates/products/detail/home_decor.html:12
+#: templates/products/detail/home_decor.html:41
 #: templates/products/shop.html:153 templates/products/shop.html:156
 msgid "Home Decor"
 msgstr "Хатні дэкор"
@@ -810,406 +835,397 @@ msgstr "Памеры"
 msgid "Colors"
 msgstr "Колеры"
 
-#: products/forms.py:294
+#: products/forms.py:295
 msgid "Please leave review meaningful and useful."
 msgstr "Калі ласка, пакіньце водгук інфарматыўным і карысным."
 
-#: products/models.py:16 products/models.py:45
+#: products/models.py:18 products/models.py:48
 msgid "Slug"
 msgstr "Слаг"
 
-#: products/models.py:20 templates/main/base.html:195
+#: products/models.py:22
+msgid "Recommend: 300 x 160 px."
+msgstr "Рэкамендуем: 300 х 160 пікселяў."
+
+#: products/models.py:23 templates/main/base.html:195
 #: templates/main/base.html:198 templates/main/base.html:471
 msgid "Logo"
 msgstr "Лагатып"
 
-#: products/models.py:21
-msgid "Recommend: 300 x 160 px."
-msgstr "Рэкамендуем: 300 х 160 пікселяў."
-
-#: products/models.py:31 products/models.py:41
+#: products/models.py:33 products/models.py:43
 msgid "Manufacturer"
 msgstr "Вытворца"
 
-#: products/models.py:32
+#: products/models.py:34
 msgid "Manufacturers"
 msgstr "Вытворцы"
 
-#: products/models.py:50 products/models.py:369
+#: products/models.py:67 products/models.py:406
 msgid "Recommend: 764 x 905 px."
 msgstr "Рэкамендуем: 764 x 905 пікселяў."
 
-#: products/models.py:63
+#: products/models.py:80
 msgid "Old price"
 msgstr "Старая цана"
 
-#: products/models.py:70 products/models.py:422
+#: products/models.py:87 products/models.py:459
 msgid "Rating"
 msgstr "Рэйтынг"
 
-#: products/models.py:73 products/models.py:350
-#: templates/products/detail/accessory.html:203
-#: templates/products/detail/clothes.html:202
-#: templates/products/detail/comic_book.html:202
-#: templates/products/detail/home_decor.html:202
-#: templates/products/detail/toy.html:202
-msgid "Description"
-msgstr "Апісанне"
-
-#: products/models.py:91 products/models.py:152 products/models.py:220
-#: products/models.py:284 products/models.py:313
+#: products/models.py:114 products/models.py:175 products/models.py:243
+#: products/models.py:307 products/models.py:336
 msgid "Select category"
 msgstr "Выберыце катэгорыю"
 
-#: products/models.py:92 products/models.py:153
+#: products/models.py:115 products/models.py:176
 msgid "Marvel"
 msgstr "Marvel"
 
-#: products/models.py:93 products/models.py:154
+#: products/models.py:116 products/models.py:177
 msgid "DC"
 msgstr "DC"
 
-#: products/models.py:94 products/models.py:155
+#: products/models.py:117 products/models.py:178
 msgid "Star Wars"
 msgstr "Зорныя войны"
 
-#: products/models.py:101 products/models.py:162 products/models.py:232
-#: products/models.py:298 products/models.py:324 support/models.py:24
-#: templates/products/detail/accessory.html:242
-#: templates/products/detail/clothes.html:241
-#: templates/products/detail/comic_book.html:241
-#: templates/products/detail/home_decor.html:241
-#: templates/products/detail/toy.html:241
+#: products/models.py:124 products/models.py:185 products/models.py:255
+#: products/models.py:321 products/models.py:347 support/models.py:24
+#: templates/products/detail/accessory.html:216
+#: templates/products/detail/clothes.html:216
+#: templates/products/detail/comic_book.html:216
+#: templates/products/detail/home_decor.html:216
+#: templates/products/detail/toy.html:216
 #: templates/support/ticket_detail.html:36
 #: templates/support/ticket_detail.html:80 templates/support/tickets.html:72
 msgid "Category"
 msgstr "Катэгорыя"
 
-#: products/models.py:107 templates/products/detail/comic_book.html:247
+#: products/models.py:130 templates/products/detail/comic_book.html:222
 msgid "Publication format"
 msgstr "Фармат выдання"
 
-#: products/models.py:112 templates/products/detail/comic_book.html:251
+#: products/models.py:135 templates/products/detail/comic_book.html:226
 msgid "Number of pages"
 msgstr "Колькасць старонак"
 
-#: products/models.py:117 templates/products/detail/comic_book.html:255
+#: products/models.py:140 templates/products/detail/comic_book.html:230
 msgid "Published"
 msgstr "Выдадзены"
 
-#: products/models.py:121
+#: products/models.py:144
 msgid "Select binding"
 msgstr "Выберыце пераплёт"
 
-#: products/models.py:122
+#: products/models.py:145
 msgid "Paperback"
 msgstr "Мяккая вокладка"
 
-#: products/models.py:123
+#: products/models.py:146
 msgid "Hardcover"
 msgstr "Цвёрды пераплёт"
 
-#: products/models.py:130 templates/products/detail/comic_book.html:259
+#: products/models.py:153 templates/products/detail/comic_book.html:234
 msgid "Binding"
 msgstr "Пераплёт"
 
-#: products/models.py:144
+#: products/models.py:167
 msgid "Comic Book"
 msgstr "Комікс"
 
-#: products/models.py:166
+#: products/models.py:189
 msgid "Select country"
 msgstr "Выберыце краіну"
 
-#: products/models.py:167
+#: products/models.py:190
 msgid "USA"
 msgstr "ЗША"
 
-#: products/models.py:168
+#: products/models.py:191
 msgid "China"
 msgstr "Кітай"
 
-#: products/models.py:169
+#: products/models.py:192
 msgid "Russia"
 msgstr "Расія"
 
-#: products/models.py:176 templates/products/detail/toy.html:249
+#: products/models.py:199 templates/products/detail/toy.html:224
 msgid "Manufacturer country"
 msgstr "Краіна вытворца"
 
-#: products/models.py:180
+#: products/models.py:203
 msgid "Select material"
 msgstr "Выберыце матэрыял"
 
-#: products/models.py:181
+#: products/models.py:204
 msgid "Plastic"
 msgstr "Пластык"
 
-#: products/models.py:182
+#: products/models.py:205
 msgid "Plastic / electronics"
 msgstr "Пластык / электроніка"
 
-#: products/models.py:183
+#: products/models.py:206
 msgid "Plastic / LED"
 msgstr "Пластык / святлодыёд"
 
-#: products/models.py:184
+#: products/models.py:207
 msgid "Polyester"
 msgstr "Поліэстэр"
 
-#: products/models.py:185
+#: products/models.py:208
 msgid "Plush"
 msgstr "Плюшавы"
 
-#: products/models.py:192 templates/products/detail/toy.html:257
+#: products/models.py:215 templates/products/detail/toy.html:232
 msgid "Material"
 msgstr "Матэрыял"
 
-#: products/models.py:198 templates/products/detail/toy.html:263
+#: products/models.py:221 templates/products/detail/toy.html:238
 msgid "Packing size"
 msgstr "Памер ўпакоўкі"
 
-#: products/models.py:199
+#: products/models.py:222
 msgid "millimetres"
 msgstr "міліметры"
 
-#: products/models.py:204 templates/products/detail/toy.html:267
+#: products/models.py:227 templates/products/detail/toy.html:242
 msgid "Weight"
 msgstr "Вага"
 
-#: products/models.py:205
+#: products/models.py:228
 msgid "gram"
 msgstr "грам"
 
-#: products/models.py:212
+#: products/models.py:235
 msgid "Toy"
 msgstr "Цацка"
 
-#: products/models.py:221
+#: products/models.py:244
 msgid "T-Shirts"
 msgstr "Футболкі"
 
-#: products/models.py:222
+#: products/models.py:245
 msgid "Jackets & Sweatshirts"
 msgstr "Курткі і кофты"
 
-#: products/models.py:223
+#: products/models.py:246
 msgid "Robes & Sleepwear"
 msgstr "Халаты і піжамы"
 
-#: products/models.py:224
+#: products/models.py:247
 msgid "Kids & Baby"
 msgstr "Дзеці і дзіця"
 
-#: products/models.py:225
+#: products/models.py:248
 msgid "Tank Tops"
 msgstr "Майкі"
 
-#: products/models.py:236
+#: products/models.py:259
 msgid "Select size"
 msgstr "Выберыце памер"
 
-#: products/models.py:237
+#: products/models.py:260
 msgid "X-Small"
 msgstr "XS"
 
-#: products/models.py:238
+#: products/models.py:261
 msgid "Small"
 msgstr "S"
 
-#: products/models.py:239 support/models.py:29
+#: products/models.py:262 support/models.py:29
 msgid "Medium"
 msgstr "Сярэдні"
 
-#: products/models.py:240
+#: products/models.py:263
 msgid "Large"
 msgstr "L"
 
-#: products/models.py:241
+#: products/models.py:264
 msgid "X-Large"
 msgstr "XL"
 
-#: products/models.py:242
+#: products/models.py:265
 msgid "XX-Large"
 msgstr "XXL"
 
-#: products/models.py:243
+#: products/models.py:266
 msgid "XXX-Large"
 msgstr "XXXL"
 
-#: products/models.py:250 templates/products/detail/clothes.html:249
+#: products/models.py:273 templates/products/detail/clothes.html:224
 msgid "Size"
 msgstr "Памер"
 
-#: products/models.py:254
+#: products/models.py:277
 msgid "Select color"
 msgstr "Выберыце колер"
 
-#: products/models.py:255
+#: products/models.py:278
 msgid "Red"
 msgstr "Чырвоны"
 
-#: products/models.py:256
+#: products/models.py:279
 msgid "Green"
 msgstr "Зялёны"
 
-#: products/models.py:257
+#: products/models.py:280
 msgid "Blue"
 msgstr "Сіні"
 
-#: products/models.py:258
+#: products/models.py:281
 msgid "Black"
 msgstr "Чорны"
 
-#: products/models.py:259
+#: products/models.py:282
 msgid "White"
 msgstr "Белы"
 
-#: products/models.py:260
+#: products/models.py:283
 msgid "Gray"
 msgstr "Шэры"
 
-#: products/models.py:261
+#: products/models.py:284
 msgid "Pink"
 msgstr "Ружовы"
 
-#: products/models.py:262
+#: products/models.py:285
 msgid "Purple"
 msgstr "Пурпурны"
 
-#: products/models.py:269 templates/products/detail/clothes.html:257
+#: products/models.py:292 templates/products/detail/clothes.html:232
 msgid "Color"
 msgstr "Колер"
 
-#: products/models.py:285
+#: products/models.py:308
 msgid "Bags & Backpacks"
 msgstr "Сумкі і заплечнікі"
 
-#: products/models.py:286
+#: products/models.py:309
 msgid "Jewelry"
 msgstr "Ювелірныя вырабы"
 
-#: products/models.py:287
+#: products/models.py:310
 msgid "Tech Accessories"
 msgstr "Тэхнічныя аксэсуары"
 
-#: products/models.py:288
+#: products/models.py:311
 msgid "Travel Accessories"
 msgstr "Дарожныя аксэсуары"
 
-#: products/models.py:289
+#: products/models.py:312
 msgid "Hats"
 msgstr "Галаўныя ўборы"
 
-#: products/models.py:290
+#: products/models.py:313
 msgid "Scarves"
 msgstr "Шалікі"
 
-#: products/models.py:291
+#: products/models.py:314
 msgid "Socks"
 msgstr "Шкарпэткі"
 
-#: products/models.py:305
+#: products/models.py:328
 msgid "Accessory"
 msgstr "Аксэсуар"
 
-#: products/models.py:314
+#: products/models.py:337
 msgid "Mugs"
 msgstr "Кружкі"
 
-#: products/models.py:315
+#: products/models.py:338
 msgid "Ornaments & Holiday Decor"
 msgstr "Упрыгажэнні і святочны дэкор"
 
-#: products/models.py:316
+#: products/models.py:339
 msgid "Posters & Prints"
 msgstr "Плакаты і друк"
 
-#: products/models.py:317
+#: products/models.py:340
 msgid "Stationery"
 msgstr "Канцтавары"
 
-#: products/models.py:353
+#: products/models.py:390
 msgid "Product Translation"
 msgstr "Пераклад прадукту"
 
-#: products/models.py:354
+#: products/models.py:391
 msgid "Product Translations"
 msgstr "Пераклады прадуктаў"
 
-#: products/models.py:373
+#: products/models.py:410
 msgid "Product Image"
 msgstr "Малюнак прадукту"
 
-#: products/models.py:374
+#: products/models.py:411
 msgid "Product Images"
 msgstr "Малюнкі прадукту"
 
-#: products/models.py:390
+#: products/models.py:427
 msgid "Count"
 msgstr "Колькасць"
 
-#: products/models.py:393
+#: products/models.py:430
 msgid "Warehouse"
 msgstr "Склад"
 
-#: products/models.py:394
+#: products/models.py:431
 msgid "Warehouses"
 msgstr "Склады"
 
-#: products/models.py:413
+#: products/models.py:450
 msgid "Choose rating"
 msgstr "Выберыце рэйтынг"
 
-#: products/models.py:414
+#: products/models.py:451
 msgid "5 stars"
 msgstr "5 зорак"
 
-#: products/models.py:415
+#: products/models.py:452
 msgid "4 stars"
 msgstr "4 зоркі"
 
-#: products/models.py:416
+#: products/models.py:453
 msgid "3 stars"
 msgstr "3 зоркі"
 
-#: products/models.py:417
+#: products/models.py:454
 msgid "2 stars"
 msgstr "2 зоркі"
 
-#: products/models.py:418
+#: products/models.py:455
 msgid "1 star"
 msgstr "1 зорка"
 
-#: products/models.py:425
+#: products/models.py:462
 msgid "Comment"
 msgstr "Каментарый"
 
-#: products/models.py:435
+#: products/models.py:472
 msgid "Likes"
 msgstr "Лайкі"
 
-#: products/models.py:441
+#: products/models.py:478
 msgid "Dislikes"
 msgstr "Дізлайкі"
 
-#: products/models.py:445
+#: products/models.py:482
 msgid "Review"
 msgstr "Водгук"
 
-#: products/models.py:446
+#: products/models.py:483
 msgid "Reviews"
 msgstr "Водгукі"
 
-#: products/views.py:952
+#: products/views.py:871
 msgid "You have already left a review for this product."
 msgstr "Вы ўжо пакінулі водгук на гэты прадукт."
 
-#: products/views.py:955
+#: products/views.py:874
 msgid "Thanks for your review."
 msgstr "Дзякуй за ваш водгук."
 
-#: products/views.py:969 products/views.py:993
+#: products/views.py:888 products/views.py:912
 msgid "Review does not exist!"
 msgstr "Водгук не існуе!"
 
@@ -1237,7 +1253,7 @@ msgstr "Магілёў"
 msgid "Vitebsk"
 msgstr "Віцебск"
 
-#: support/apps.py:8 templates/accounts/account_base.html:67
+#: support/apps.py:8 templates/accounts/account_base.html:68
 #: templates/main/base.html:142 templates/main/base.html:292
 #: templates/main/base.html:510 templates/support/support.html:8
 #: templates/support/ticket_detail.html:7
@@ -1316,8 +1332,8 @@ msgstr "Абновіце ваш адрас ніжэй:"
 
 #: templates/accounts/account_address_change.html:27
 #: templates/accounts/account_addresses.html:73
-#: templates/accounts/account_base.html:97
-#: templates/accounts/account_profile.html:24
+#: templates/accounts/account_base.html:98
+#: templates/accounts/account_profile.html:25
 #: templates/accounts/account_profile_delete.html:23
 #: templates/accounts/password_change.html:25 templates/main/base.html:315
 #: templates/orders/detail.html:27 templates/orders/list.html:26
@@ -1377,7 +1393,7 @@ msgstr "Асноўны"
 msgid "Edit"
 msgstr "Рэдагаваць"
 
-#: templates/accounts/account_addresses.html:99 templates/cart/detail.html:99
+#: templates/accounts/account_addresses.html:99 templates/cart/detail.html:91
 #: templates/wishlist/list.html:56
 msgid "Remove"
 msgstr "Выдаліць"
@@ -1390,9 +1406,9 @@ msgstr "У вас яшчэ няма адрасоў!"
 msgid "Add new address"
 msgstr "Дадаць новы адрас"
 
-#: templates/accounts/account_base.html:16 templates/admin/base.html:66
-#: templates/cart/detail.html:26 templates/contacts/contacts.html:24
-#: templates/contacts/store_detail.html:24 templates/main/base.html:350
+#: templates/accounts/account_base.html:17 templates/admin/base.html:66
+#: templates/cart/detail.html:26 templates/contacts/contacts.html:27
+#: templates/contacts/store_detail.html:27 templates/main/base.html:350
 #: templates/main/index.html:8 templates/orders/create.html:26
 #: templates/products/base/accessories.html:30
 #: templates/products/base/clothes.html:30
@@ -1400,68 +1416,68 @@ msgstr "Дадаць новы адрас"
 #: templates/products/base/home_decor.html:30
 #: templates/products/base/manufacturer.html:27
 #: templates/products/base/search.html:28 templates/products/base/toys.html:30
-#: templates/products/detail/accessory.html:42
-#: templates/products/detail/clothes.html:41
-#: templates/products/detail/comic_book.html:41
-#: templates/products/detail/home_decor.html:41
-#: templates/products/detail/toy.html:41 templates/products/shop.html:20
+#: templates/products/detail/accessory.html:34
+#: templates/products/detail/clothes.html:34
+#: templates/products/detail/comic_book.html:34
+#: templates/products/detail/home_decor.html:34
+#: templates/products/detail/toy.html:34 templates/products/shop.html:20
 msgid "Home"
 msgstr "Галоўная"
 
-#: templates/accounts/account_base.html:20
+#: templates/accounts/account_base.html:21
 msgid "Account"
 msgstr "Уліковы запіс"
 
-#: templates/accounts/account_base.html:40
-#: templates/accounts/account_profile.html:32
+#: templates/accounts/account_base.html:41
+#: templates/accounts/account_profile.html:33
 msgid "Your Avatar"
 msgstr "Ваш аватар"
 
-#: templates/accounts/account_base.html:49
+#: templates/accounts/account_base.html:50
 msgid "Dashboard"
 msgstr "Кіраванне"
 
-#: templates/accounts/account_base.html:60 templates/main/base.html:287
+#: templates/accounts/account_base.html:61 templates/main/base.html:287
 #: templates/wishlist/list.html:7 templates/wishlist/list.html:11
 #: templates/wishlist/list.html:14 wishlist/apps.py:8
 msgid "Wishlist"
 msgstr "Спіс жаданняў"
 
-#: templates/accounts/account_base.html:77
+#: templates/accounts/account_base.html:78
 msgid "Account settings"
 msgstr "Налады ўліковага запісу"
 
-#: templates/accounts/account_base.html:82
-#: templates/accounts/account_profile.html:7
-#: templates/accounts/account_profile.html:11
-#: templates/accounts/account_profile.html:14
+#: templates/accounts/account_base.html:83
+#: templates/accounts/account_profile.html:8
+#: templates/accounts/account_profile.html:12
+#: templates/accounts/account_profile.html:15
 msgid "Profile info"
 msgstr "Інфармацыя аб профілі"
 
-#: templates/accounts/account_base.html:92 templates/main/base.html:310
+#: templates/accounts/account_base.html:93 templates/main/base.html:310
 #: templates/main/base.html:533
 msgid "Payment methods"
 msgstr "Спосабы аплаты"
 
-#: templates/accounts/account_profile.html:23
+#: templates/accounts/account_profile.html:24
 msgid "Update you profile details below:"
 msgstr "Абновіце дадзеныя свайго профілю ніжэй:"
 
-#: templates/accounts/account_profile.html:43
+#: templates/accounts/account_profile.html:46
 msgid "Upload JPG or PNG image. The minimum 300 x 300 required."
 msgstr ""
 "Загружайце малюнак у фармаце JPG ці PNG. Патрабуецца мінімум 300 х 300."
 
-#: templates/accounts/account_profile.html:61
+#: templates/accounts/account_profile.html:64
 msgid "Update profile"
 msgstr "Абнавіць профіль"
 
-#: templates/accounts/account_profile.html:69
+#: templates/accounts/account_profile.html:72
 #: templates/accounts/password_change.html:91 templates/admin/base.html:54
 msgid "Change password"
 msgstr "Змяніць пароль"
 
-#: templates/accounts/account_profile.html:70
+#: templates/accounts/account_profile.html:73
 msgid "Delete profile"
 msgstr "Выдаліць профіль"
 
@@ -1630,7 +1646,7 @@ msgid "Forgot password?"
 msgstr "Забыліся пароль?"
 
 #: templates/accounts/signin.html:50 templates/accounts/signup.html:76
-#: templates/main/base.html:327 templates/products/reviews.html:279
+#: templates/main/base.html:327 templates/products/reviews.html:280
 msgid "Sign In"
 msgstr "Увайсці"
 
@@ -1690,30 +1706,30 @@ msgstr "Ваш кошык"
 msgid "Continue shopping"
 msgstr "Працягнуць пакупкі"
 
-#: templates/cart/detail.html:106
+#: templates/cart/detail.html:98
 msgid "Update cart"
 msgstr "Абнавіць кошык"
 
-#: templates/cart/detail.html:109 templates/cart/navbar_expand.html:79
+#: templates/cart/detail.html:101 templates/cart/navbar_expand.html:71
 #: templates/cart/script_base.html:34 templates/cart/script_detail.html:41
 msgid "Your cart is empty!"
 msgstr "Ваш кошык пусты!"
 
-#: templates/cart/detail.html:120
+#: templates/cart/detail.html:112
 msgid "Apply"
 msgstr "Прымяніць"
 
-#: templates/cart/detail.html:124 templates/cart/navbar_expand.html:64
-#: templates/cart/script_base.html:131 templates/orders/create.html:151
+#: templates/cart/detail.html:116 templates/cart/navbar_expand.html:56
+#: templates/cart/script_base.html:131 templates/orders/create.html:145
 msgid "Total"
 msgstr "Усяго"
 
-#: templates/cart/detail.html:155 templates/cart/navbar_expand.html:76
+#: templates/cart/detail.html:147 templates/cart/navbar_expand.html:68
 #: templates/cart/script_base.html:144
 msgid "To order"
 msgstr "Замовіць"
 
-#: templates/cart/navbar_expand.html:70 templates/cart/script_base.html:138
+#: templates/cart/navbar_expand.html:62 templates/cart/script_base.html:138
 msgid "Expand cart"
 msgstr "Разгарнуць кошык"
 
@@ -1725,118 +1741,118 @@ msgstr "Дададзена ў кошык!"
 msgid "This product has been added to your cart."
 msgstr "Гэты тавар дададзены ў ваш кошык."
 
-#: templates/contacts/contacts.html:44
+#: templates/contacts/contacts.html:47
 msgid "Main store address"
 msgstr "Адрас асноўнага магазіна"
 
-#: templates/contacts/contacts.html:57 templates/contacts/store_detail.html:60
+#: templates/contacts/contacts.html:52 templates/contacts/store_detail.html:55
 msgid "Click to see map"
 msgstr "Націсніце, каб убачыць карту"
 
-#: templates/contacts/contacts.html:70 templates/contacts/store_detail.html:73
+#: templates/contacts/contacts.html:65 templates/contacts/store_detail.html:68
 msgid "Mon"
 msgstr "Пн"
 
-#: templates/contacts/contacts.html:70 templates/contacts/store_detail.html:73
+#: templates/contacts/contacts.html:65 templates/contacts/store_detail.html:68
 msgid "Fri"
 msgstr "Пт"
 
-#: templates/contacts/contacts.html:75 templates/contacts/store_detail.html:78
+#: templates/contacts/contacts.html:70 templates/contacts/store_detail.html:73
 msgid "Sat"
 msgstr "Сб"
 
-#: templates/contacts/contacts.html:75 templates/contacts/store_detail.html:78
+#: templates/contacts/contacts.html:70 templates/contacts/store_detail.html:73
 msgid "Sun"
 msgstr "Нд"
 
-#: templates/contacts/contacts.html:87 templates/contacts/store_detail.html:90
+#: templates/contacts/contacts.html:82 templates/contacts/store_detail.html:85
 msgid "Phone numbers"
 msgstr "Тэлефонныя нумары"
 
-#: templates/contacts/contacts.html:90 templates/contacts/contacts.html:108
-#: templates/contacts/store_detail.html:93
-#: templates/contacts/store_detail.html:111
+#: templates/contacts/contacts.html:85 templates/contacts/contacts.html:103
+#: templates/contacts/store_detail.html:88
+#: templates/contacts/store_detail.html:106
 msgid "For customers"
 msgstr "Для кліентаў"
 
-#: templates/contacts/contacts.html:94 templates/contacts/contacts.html:112
-#: templates/contacts/store_detail.html:97
-#: templates/contacts/store_detail.html:115
+#: templates/contacts/contacts.html:89 templates/contacts/contacts.html:107
+#: templates/contacts/store_detail.html:92
+#: templates/contacts/store_detail.html:110
 msgid "Tech support"
 msgstr "Тэхнічная падтрымка"
 
-#: templates/contacts/contacts.html:105
-#: templates/contacts/store_detail.html:108
+#: templates/contacts/contacts.html:100
+#: templates/contacts/store_detail.html:103
 msgid "Email addresses"
 msgstr "Адрасы электроннай пошты"
 
-#: templates/contacts/contacts.html:124
+#: templates/contacts/contacts.html:119
 msgid "Our Stores"
 msgstr "Нашы магазіны"
 
-#: templates/contacts/contacts.html:144
+#: templates/contacts/contacts.html:139
 msgid "Find us"
 msgstr "Знайдзіце нас"
 
-#: templates/contacts/contacts.html:161
+#: templates/contacts/contacts.html:148
 msgid "Call us"
 msgstr "Патэлефануйце нам"
 
-#: templates/contacts/contacts.html:168
+#: templates/contacts/contacts.html:155
 msgid "Write us"
 msgstr "Напішыце нам"
 
-#: templates/contacts/contacts.html:216
+#: templates/contacts/contacts.html:195
 msgid "Drop us a line"
 msgstr "Напішыце нам"
 
-#: templates/contacts/contacts.html:222
+#: templates/contacts/contacts.html:201
 msgid "Your name"
 msgstr "Ваша імя"
 
-#: templates/contacts/contacts.html:224
+#: templates/contacts/contacts.html:203
 msgid "Please fill in you name!"
 msgstr "Калі ласка, увядзіце сваё імя!"
 
-#: templates/contacts/contacts.html:229
+#: templates/contacts/contacts.html:208
 msgid "Your Email"
 msgstr "Ваш E-mail"
 
-#: templates/contacts/contacts.html:231
+#: templates/contacts/contacts.html:210
 msgid "Please provide valid email address!"
 msgstr "Калі ласка, укажыце дзейны адрас электроннай пошты!"
 
-#: templates/contacts/contacts.html:236
+#: templates/contacts/contacts.html:215
 msgid "Your phone"
 msgstr "Ваш тэлефон"
 
-#: templates/contacts/contacts.html:238
+#: templates/contacts/contacts.html:217
 msgid "Please provide valid phone number!"
 msgstr "Калі ласка, укажыце дзейны нумар тэлефона!"
 
-#: templates/contacts/contacts.html:244
+#: templates/contacts/contacts.html:223
 msgid "Provide short title of your request"
 msgstr "Пазначце кароткую назву вашага запыту"
 
-#: templates/contacts/contacts.html:250
+#: templates/contacts/contacts.html:229
 msgid "Please describe in detail your request"
 msgstr "Калі ласка, падрабязна апішыце ваш запыт"
 
-#: templates/contacts/contacts.html:251
+#: templates/contacts/contacts.html:230
 msgid "Please write a message!"
 msgstr "Калі ласка, напішыце паведамленне!"
 
-#: templates/contacts/contacts.html:253
+#: templates/contacts/contacts.html:232
 msgid "Send message"
 msgstr "Адправіць паведамленне"
 
-#: templates/contacts/store_detail.html:6
-#: templates/contacts/store_detail.html:30
-#: templates/contacts/store_detail.html:35
+#: templates/contacts/store_detail.html:9
+#: templates/contacts/store_detail.html:33
+#: templates/contacts/store_detail.html:38
 msgid "Store info"
 msgstr "Інфармацыя аб краме"
 
-#: templates/contacts/store_detail.html:47
+#: templates/contacts/store_detail.html:50
 msgid "Store address"
 msgstr "Адрас крамы"
 
@@ -2268,28 +2284,28 @@ msgid "Follow on Instagram"
 msgstr "Выконвайце ў Instagram"
 
 #: templates/main/index_product.html:7
-#: templates/products/detail/accessory.html:168
-#: templates/products/detail/clothes.html:167
-#: templates/products/detail/comic_book.html:167
-#: templates/products/detail/home_decor.html:167
-#: templates/products/detail/toy.html:167
-#: templates/products/grid/products.html:10
-#: templates/products/list/products.html:9
-#: templates/products/other_products.html:15
-#: templates/products/other_products.html:111
-msgid "Sale"
-msgstr "Распродаж"
-
-#: templates/main/index_product.html:10
-#: templates/products/detail/accessory.html:151
+#: templates/products/detail/accessory.html:150
 #: templates/products/detail/clothes.html:150
 #: templates/products/detail/comic_book.html:150
 #: templates/products/detail/home_decor.html:150
 #: templates/products/detail/toy.html:150
+#: templates/products/grid/products.html:10
+#: templates/products/list/products.html:9
+#: templates/products/other_products.html:15
+#: templates/products/other_products.html:103
+msgid "Sale"
+msgstr "Распродаж"
+
+#: templates/main/index_product.html:10
+#: templates/products/detail/accessory.html:133
+#: templates/products/detail/clothes.html:133
+#: templates/products/detail/comic_book.html:133
+#: templates/products/detail/home_decor.html:133
+#: templates/products/detail/toy.html:133
 #: templates/products/grid/products.html:13
 #: templates/products/list/products.html:12
 #: templates/products/other_products.html:17
-#: templates/products/other_products.html:113
+#: templates/products/other_products.html:105
 msgid "Add to wishlist"
 msgstr "Дадаць у спіс жаданняў"
 
@@ -2350,19 +2366,19 @@ msgstr "Аплата"
 msgid "Your details"
 msgstr "Вашы дадзеныя"
 
-#: templates/orders/create.html:100 templates/orders/create.html:192
+#: templates/orders/create.html:100 templates/orders/create.html:186
 msgid "Back to Cart"
 msgstr "Вярнуцца ў кошык"
 
-#: templates/orders/create.html:101 templates/orders/create.html:193
+#: templates/orders/create.html:101 templates/orders/create.html:187
 msgid "Back"
 msgstr "Назад"
 
-#: templates/orders/create.html:106 templates/orders/create.html:198
+#: templates/orders/create.html:106 templates/orders/create.html:192
 msgid "Proceed to Payment"
 msgstr "Перайсці да аплаты"
 
-#: templates/orders/create.html:107 templates/orders/create.html:199
+#: templates/orders/create.html:107 templates/orders/create.html:193
 msgid "Continue"
 msgstr "Працягнуць"
 
@@ -2382,19 +2398,19 @@ msgstr "Дэталі вашага заказа"
 msgid "Ordered goods"
 msgstr "Заказаныя тавары"
 
-#: templates/orders/detail.html:67
+#: templates/orders/detail.html:61
 msgid "Cost info"
 msgstr "Інфармацыя пра кошт"
 
-#: templates/orders/detail.html:96
+#: templates/orders/detail.html:90
 msgid "Details of order"
 msgstr "Дэталі заказа"
 
-#: templates/orders/detail.html:99 templates/orders/list.html:34
+#: templates/orders/detail.html:93 templates/orders/list.html:34
 msgid "Order #"
 msgstr "Заказ №"
 
-#: templates/orders/detail.html:103 templates/orders/list.html:35
+#: templates/orders/detail.html:97 templates/orders/list.html:35
 msgid "Date Purchased"
 msgstr "Дата пакупкі"
 
@@ -2417,11 +2433,11 @@ msgstr "У вас яшчэ няма заказаў!"
 #: templates/products/base/home_decor.html:34
 #: templates/products/base/manufacturer.html:31
 #: templates/products/base/search.html:32 templates/products/base/toys.html:34
-#: templates/products/detail/accessory.html:46
-#: templates/products/detail/clothes.html:45
-#: templates/products/detail/comic_book.html:45
-#: templates/products/detail/home_decor.html:45
-#: templates/products/detail/toy.html:45 templates/products/shop.html:7
+#: templates/products/detail/accessory.html:38
+#: templates/products/detail/clothes.html:38
+#: templates/products/detail/comic_book.html:38
+#: templates/products/detail/home_decor.html:38
+#: templates/products/detail/toy.html:38 templates/products/shop.html:7
 #: templates/products/shop.html:23 templates/products/shop.html:28
 msgid "Shop"
 msgstr "Крама"
@@ -2477,72 +2493,72 @@ msgstr "Фільтры"
 msgid "Search"
 msgstr "Пошук"
 
-#: templates/products/detail/accessory.html:148
-#: templates/products/detail/clothes.html:147
-#: templates/products/detail/comic_book.html:147
-#: templates/products/detail/home_decor.html:147
-#: templates/products/detail/toy.html:147 templates/products/reviews.html:10
+#: templates/products/detail/accessory.html:130
+#: templates/products/detail/clothes.html:130
+#: templates/products/detail/comic_book.html:130
+#: templates/products/detail/home_decor.html:130
+#: templates/products/detail/toy.html:130 templates/products/reviews.html:11
 #, python-format
 msgid "%(count)s Reviews"
 msgstr "%(count)s водгук(аў)"
 
-#: templates/products/detail/accessory.html:174
-#: templates/products/detail/clothes.html:173
-#: templates/products/detail/comic_book.html:173
-#: templates/products/detail/home_decor.html:173
-#: templates/products/detail/toy.html:173
+#: templates/products/detail/accessory.html:156
+#: templates/products/detail/clothes.html:156
+#: templates/products/detail/comic_book.html:156
+#: templates/products/detail/home_decor.html:156
+#: templates/products/detail/toy.html:156
 msgid "Product available"
 msgstr "Прадукт даступны"
 
-#: templates/products/detail/accessory.html:178
-#: templates/products/detail/clothes.html:177
-#: templates/products/detail/comic_book.html:177
-#: templates/products/detail/home_decor.html:177
-#: templates/products/detail/toy.html:177
+#: templates/products/detail/accessory.html:160
+#: templates/products/detail/clothes.html:160
+#: templates/products/detail/comic_book.html:160
+#: templates/products/detail/home_decor.html:160
+#: templates/products/detail/toy.html:160
 msgid "Product not available"
 msgstr "Прадукт недаступны"
 
-#: templates/products/detail/accessory.html:192
-#: templates/products/detail/clothes.html:191
-#: templates/products/detail/comic_book.html:191
-#: templates/products/detail/home_decor.html:191
-#: templates/products/detail/toy.html:191
-#: templates/products/grid/products.html:95
-#: templates/products/list/products.html:94
+#: templates/products/detail/accessory.html:174
+#: templates/products/detail/clothes.html:174
+#: templates/products/detail/comic_book.html:174
+#: templates/products/detail/home_decor.html:174
+#: templates/products/detail/toy.html:174
+#: templates/products/grid/products.html:87
+#: templates/products/list/products.html:86
 msgid "Add to Cart"
 msgstr "Дадаць у кошык"
 
-#: templates/products/detail/accessory.html:229
-#: templates/products/detail/clothes.html:228
-#: templates/products/detail/comic_book.html:228
-#: templates/products/detail/home_decor.html:228
-#: templates/products/detail/toy.html:228
+#: templates/products/detail/accessory.html:203
+#: templates/products/detail/clothes.html:203
+#: templates/products/detail/comic_book.html:203
+#: templates/products/detail/home_decor.html:203
+#: templates/products/detail/toy.html:203
 msgid "Product info"
 msgstr "Інфармацыя пра прадукт"
 
-#: templates/products/detail/accessory.html:315
-#: templates/products/detail/clothes.html:330
-#: templates/products/detail/comic_book.html:344
-#: templates/products/detail/home_decor.html:314
-#: templates/products/detail/toy.html:338
+#: templates/products/detail/accessory.html:289
+#: templates/products/detail/clothes.html:305
+#: templates/products/detail/comic_book.html:319
+#: templates/products/detail/home_decor.html:289
+#: templates/products/detail/toy.html:313
 msgid "Share"
 msgstr "Падзяліцца"
 
-#: templates/products/detail/toy.html:263
+#: templates/products/detail/toy.html:238
 msgid "mm"
 msgstr "мм"
 
-#: templates/products/detail/toy.html:267
+#: templates/products/detail/toy.html:242
 msgid "g"
 msgstr "г"
 
-#: templates/products/grid/products.html:106
-#: templates/products/list/products.html:106
+#: templates/products/grid/products.html:98
+#: templates/products/list/products.html:98
 msgid "No products"
 msgstr "Няма тавараў"
 
-#: templates/products/grid/products.html:107
-#: templates/products/list/products.html:107
+#: templates/products/grid/products.html:99
+#: templates/products/list/products.html:99
 msgid "There are no products for this request!"
 msgstr "Няма тавараў па гэтым запыце!"
 
@@ -2550,27 +2566,27 @@ msgstr "Няма тавараў па гэтым запыце!"
 msgid "You may also like"
 msgstr "Вам таксама можа спадабацца"
 
-#: templates/products/other_products.html:103
+#: templates/products/other_products.html:95
 msgid "Other products"
 msgstr "Іншыя тавары"
 
-#: templates/products/reviews.html:50
+#: templates/products/reviews.html:51
 msgid "Overall rating"
 msgstr "Агульны рэйтынг"
 
-#: templates/products/reviews.html:135
+#: templates/products/reviews.html:136
 msgid "View all reviews"
 msgstr "Паглядзець усе водгукі"
 
-#: templates/products/reviews.html:265
+#: templates/products/reviews.html:266
 msgid "Write a review"
 msgstr "Напісаць водгук"
 
-#: templates/products/reviews.html:269
+#: templates/products/reviews.html:270
 msgid "Submit a Review"
 msgstr "Адправіць водгук"
 
-#: templates/products/reviews.html:278
+#: templates/products/reviews.html:279
 msgid "To leave a comment, you need to"
 msgstr "Каб пакінуць каментар, вам неабходна"
 
