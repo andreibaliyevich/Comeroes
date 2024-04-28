@@ -67,11 +67,11 @@
 
 ##### 5. Создать образ
 
-    docker-compose build
+    docker compose build
 
 ##### 6. Запустить bash в сервисе django
 
-    docker-compose run django bash
+    docker compose run django bash
 
 ##### 7. Применить миграции
 
@@ -91,7 +91,7 @@
 
 ##### 11. Запустить контейнер
 
-    docker-compose up
+    docker compose up
 
 
 ## Bootstrap Theme
